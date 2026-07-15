@@ -1,0 +1,59 @@
+---
+// ===================================================================
+//  WORK INDEX PAGE
+//  Copy: src/content/pages/work.yml
+//  Case studies: src/content/work/*.md
+// ===================================================================
+import { getEntry, getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WorkCard from '../components/WorkCard.astro';
+
+const page = await getEntry('pages', 'work');
+const c = page.data as any;
+
+const projects = (await getCollection('work', ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Work', path: '/work' },
+];
+---
+
+<BaseLayout title={c.seo.title} description={c.seo.description} breadcrumbs={breadcrumbs}>
+  <section class="container pb-8 pt-16 md:pt-24">
+    <div class="max-w-3xl">
+      <p class="label">{c.label}</p>
+      <h1 class="mt-4 text-h1 font-semibold text-charcoal">{c.h1}</h1>
+      <p class="mt-6 text-lead text-charcoal/75">{c.intro}</p>
+    </div>
+  </section>
+
+  <section class="container py-section">
+    <div class="grid gap-x-8 gap-y-14 md:grid-cols-2">
+      {
+        projects.map((w) => (
+          <WorkCard
+            href={`/work/${w.slug}`}
+            image={w.data.image}
+            imageAlt={w.data.imageAlt}
+            client={w.data.client}
+            industry={w.data.industry}
+            title={w.data.title}
+            summary={w.data.summary}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="bg-terracotta">
+    <div class="container flex flex-col items-center gap-6 py-section text-center md:flex-row md:justify-between md:text-left">
+      <p class="text-h2 font-serif font-medium text-cream reveal">{c.cta.text}</p>
+      <a href={c.cta.button.href} class="btn bg-cream text-terracotta-deep hover:bg-white reveal">
+        {c.cta.button.label}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

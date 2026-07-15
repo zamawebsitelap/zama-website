@@ -1,0 +1,219 @@
+---
+// ===================================================================
+//  HOME PAGE
+//  Layout/structure lives here; all the words live in
+//  src/content/pages/home.yml (plus services/, work/, blog/, faq.yml).
+// ===================================================================
+import { getEntry, getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import WorkCard from '../components/WorkCard.astro';
+import BlogCard from '../components/BlogCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import FaqList from '../components/FaqList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Figure from '../components/Figure.astro';
+
+// --- Load editable content ---
+const page = await getEntry('pages', 'home');
+const c = page.data as any; // page copy from src/content/pages/home.yml
+
+const faqEntry = await getEntry('pages', 'faq');
+const faqs = (faqEntry.data as any).items as { question: string; answer: string }[];
+
+// Services, ordered by their `order` field.
+const services = (await getCollection('services')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+// Featured case studies for "Selected work".
+const featuredWork = (await getCollection('work', ({ data }) => data.featured && !data.draft))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+
+// Three most recent blog posts for "Insights".
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+// Featured client testimonials.
+const testimonials = (await getCollection('testimonials', ({ data }) => data.featured)).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<BaseLayout title={c.seo.title} description={c.seo.description} faqs={faqs}>
+  {/* ===================== HERO ===================== */}
+  <section class="relative overflow-hidden">
+    <div class="container grid items-center gap-12 pb-16 pt-16 md:grid-cols-2 md:gap-16 md:pb-24 md:pt-24">
+      <div>
+        <h1 class="text-display font-medium italic text-charcoal">
+          {c.hero.h1}
+        </h1>
+        <p class="mt-6 max-w-md text-lead text-charcoal/75">{c.hero.subhead}</p>
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <a href={c.hero.primaryCta.href} class="btn-primary">{c.hero.primaryCta.label}</a>
+          <a href={c.hero.secondaryCta.href} class="btn-secondary">{c.hero.secondaryCta.label}</a>
+        </div>
+      </div>
+      {/* Hero image is above the fold -> load eagerly to avoid a flash */}
+      <div class="reveal is-visible">
+        <Figure src={c.hero.image} alt={c.hero.imageAlt} ratio="4/5" loading="eager" />
+      </div>
+    </div>
+    <hr class="rule-gold container" />
+  </section>
+
+  {/* ===================== POSITIONING ===================== */}
+  <section class="container py-section">
+    <p class="mx-auto max-w-4xl text-center font-serif text-h2 font-medium leading-[1.25] text-charcoal reveal">
+      {c.positioning}
+    </p>
+  </section>
+
+  {/* ===================== SERVICES ===================== */}
+  <section class="bg-stone">
+    <div class="container py-section">
+      <SectionHeader
+        label={c.services.label}
+        heading={c.services.heading}
+        intro={c.services.intro}
+      />
+      <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          services.map((s, i) => (
+            <ServiceCard index={i + 1} title={s.data.title} description={s.data.short} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {/* ===================== SELECTED WORK ===================== */}
+  <section class="container py-section">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <SectionHeader
+        label={c.selectedWork.label}
+        heading={c.selectedWork.heading}
+        intro={c.selectedWork.intro}
+      />
+      <a href={c.selectedWork.cta.href} class="link-underline">
+        {c.selectedWork.cta.label} <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+    <div class="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+      {
+        featuredWork.map((w) => (
+          <WorkCard
+            href={`/work/${w.slug}`}
+            image={w.data.image}
+            imageAlt={w.data.imageAlt}
+            client={w.data.client}
+            industry={w.data.industry}
+            title={w.data.title}
+            summary={w.data.summary}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ===================== HOW WE WORK ===================== */}
+  <section class="bg-stone">
+    <div class="container py-section">
+      <SectionHeader label={c.approach.label} heading={c.approach.heading} />
+      <ol class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          c.approach.steps.map((step: any, i: number) => (
+            <li class="reveal">
+              <span class="font-serif text-4xl text-gold/70">{String(i + 1).padStart(2, '0')}</span>
+              <hr class="mt-4 rule-gold" />
+              <h3 class="mt-5 text-h3 font-semibold text-charcoal">{step.title}</h3>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-charcoal/70">{step.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  {/* ===================== RESULTS (dramatic dark section) ===================== */}
+  <section class="bg-ink">
+    <div class="container py-section">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-h1 font-medium text-cream reveal">{c.results.heading}</h2>
+        <p class="mx-auto mt-6 max-w-2xl text-lead text-cream/75 reveal">{c.results.line}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ===================== TESTIMONIALS ===================== */}
+  <section class="container py-section">
+    <SectionHeader
+      label={c.testimonials.label}
+      heading={c.testimonials.heading}
+    />
+    <div class="mt-14 grid gap-6 md:grid-cols-3">
+      {
+        testimonials.map((t) => (
+          <TestimonialCard
+            quote={t.data.quote}
+            name={t.data.name}
+            title={t.data.title}
+            company={t.data.company}
+            photo={t.data.photo}
+            photoAlt={t.data.photoAlt}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ===================== INSIGHTS / BLOG ===================== */}
+  <section class="container py-section">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <SectionHeader
+        label={c.insights.label}
+        heading={c.insights.heading}
+        intro={c.insights.intro}
+      />
+      <a href={c.insights.cta.href} class="link-underline">
+        {c.insights.cta.label} <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+    <div class="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+      {
+        posts.map((p) => (
+          <BlogCard
+            href={`/blog/${p.slug}`}
+            image={p.data.image}
+            imageAlt={p.data.imageAlt}
+            title={p.data.title}
+            description={p.data.description}
+            pubDate={p.data.pubDate}
+            tags={p.data.tags}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ===================== FAQ ===================== */}
+  <section class="bg-stone">
+    <div class="container grid gap-12 py-section md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+      <SectionHeader label={c.faq.label} heading={c.faq.heading} />
+      <FaqList items={faqs} />
+    </div>
+  </section>
+
+  {/* ===================== CONTACT BAND ===================== */}
+  <CtaBand
+    heading={c.contactBand.heading}
+    line={c.contactBand.line}
+    buttonLabel={c.contactBand.button.label}
+    buttonHref={c.contactBand.button.href}
+    variant="terracotta"
+  />
+</BaseLayout>
+can i make changes ?

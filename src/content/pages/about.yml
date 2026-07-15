@@ -1,0 +1,52 @@
+# =====================================================================
+#  ABOUT PAGE COPY
+# =====================================================================
+
+seo:
+  title: "About ZAMA | Every brand deserves its dawn."
+  description: "A boutique digital marketing agency serving Washington, DC and South Florida, built to bring brands into their dawn, turning unseen ideas into unmistakable presence."
+
+label: "ABOUT ZAMA"
+h1: "Every brand deserves its dawn, its sunrise, its light."
+
+# Your portrait for the story section.
+# To use your own photo: add it to /public/images/ (e.g. founder-portrait.jpg)
+# and point this line at it. Always update the alt text below too.
+image: "/images/savoir00002.jpg"
+imageAlt: "Portrait photo for the founder of ZAMA, a boutique digital marketing agency in Washington, DC."
+
+# The founding story (each item becomes its own paragraph).
+story:
+  - "There is a particular kind of quiet right before the sun comes up. Everything is there already. The sky, the horizon, the whole day waiting. It just has not been lit yet."
+  - "That is where so many brands live. Full of promise, full of story, doing beautiful work, and still somehow in the dark. Not because they are not worthy of attention, but because no one has helped them catch the light."
+  - "ZAMA was built for exactly that. We are a boutique digital marketing agency, and our whole reason for existing is to bring brands into the light: to find the truth of who you are, shape it into something people can see and feel, and then help it rise until the world can't look away."
+  - "We believe every brand deserves its dawn, its sunrise, its light. Not just the big ones. Not just the ones with the biggest budgets. Yours too."
+  - "Being boutique is how we keep that promise. We stay small on purpose, so the people who meet you are the people who do your work, so strategy and creative and growth move as one, and so we can care about your brand like it is our own. Because to us, it kind of is."
+  - "The sun is going to come up. Let's make sure yours does too."
+
+# The Four Dawns framework.
+valuesLabel: "THE FOUR DAWNS"
+valuesHeading: "Every brand we work with moves through four dawns."
+values:
+  - title: "The First Dawn: Clarity."
+    text: "Before anything is designed, we find the truth of who you are. Your positioning, your purpose, the thing that makes you unmistakably yourself. This is the still moment before the light, and it is the most important one."
+  - title: "The Second Dawn: Identity."
+    text: "Now we shape the light. Your look, your voice, your story, made real and consistent across everything. This is where the horizon starts to glow and your brand becomes something people can actually see and feel."
+  - title: "The Third Dawn: Momentum."
+    text: "The sunrise. This is the work that reaches people: campaigns, content, paid, organic, email, and search all pulling in the same direction. This is where awareness grows and your brand starts to be known."
+  - title: "The Fourth Dawn: Light."
+    text: "Full daylight. Your brand is recognized, remembered, and fully itself, doing its job and moving the numbers that matter. Not a flash in the pan, but a presence."
+
+# Why ZAMA (bullet list).
+whyLabel: "WHY ZAMA"
+whyHeading: "We exist to bring brands into the light."
+why:
+  - "We stay small on purpose so the people who meet you are the people who do your work."
+  - "Strategy, creative, and growth move as one."
+  - "We care about your brand like it is our own."
+
+# Closing call-to-action band
+cta:
+  button:
+    label: "Let's talk about your brand."
+    href: "/contact"

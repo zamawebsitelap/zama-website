@@ -1,0 +1,25 @@
+# =====================================================================
+#  FAQ  — questions & answers
+#  Used both for the on-page FAQ section AND the FAQPage structured
+#  data (helps Google and AI answer engines quote ZAMA accurately).
+#  Add a new "- question / answer" pair to add an FAQ.
+# =====================================================================
+
+items:
+  - question: "What is ZAMA?"
+    answer: "ZAMA is a boutique digital marketing agency in Washington, DC that helps brands grow through brand strategy, creative, paid advertising, social media, email marketing, SEO, analytics, and growth marketing."
+
+  - question: "What services does ZAMA offer?"
+    answer: "Brand strategy, creative strategy, paid advertising, organic social media, email marketing, SEO, analytics and reporting, and growth marketing. Hire ZAMA for one service or your full marketing engine."
+
+  - question: "What kind of businesses does ZAMA work with?"
+    answer: "Brands across industries that want premium marketing and measurable growth, from ambitious small businesses to established companies scaling their marketing."
+
+  - question: "Where is ZAMA located?"
+    answer: "ZAMA is a boutique digital marketing agency based in Washington, DC, working with clients across the DC metro area and nationwide."
+
+  - question: "What makes ZAMA different?"
+    answer: "ZAMA is senior-led and intentionally small, so experienced marketers handle your work rather than junior staff. Strategy, creative, and performance operate as one connected team, and every engagement is tied to measurable results."
+
+  - question: "How do I start working with ZAMA?"
+    answer: "Start a project or book a free consultation at wearezama.com, or email hello@wearezama.com. ZAMA responds within one business day."

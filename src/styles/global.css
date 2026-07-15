@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================================================
+   ZAMA — GLOBAL STYLES
+   The brand palette is also exposed as CSS variables here (handy
+   reference; the Tailwind theme in tailwind.config.mjs is the
+   source of truth for utility classes).
+   ================================================================ */
+:root {
+  --cream: #fbf8f3;
+  --white: #ffffff;
+  --terracotta: #be6a4d;
+  --terracotta-deep: #9e4e37;
+  --gold: #b08d57;
+  --charcoal: #33322e;
+  --black: #121212;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream text-charcoal font-sans antialiased;
+    font-feature-settings: 'kern', 'liga', 'calt';
+  }
+
+  /* Subtle film-grain overlay — adds analog texture so surfaces don't
+     read as flat/digital. Sits above everything but ignores clicks. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif text-charcoal;
+    font-optical-sizing: auto;
+  }
+
+  /* Terracotta links inside body copy */
+  .prose-zama a {
+    @apply text-terracotta underline decoration-gold/50 underline-offset-4 transition-colors;
+  }
+  .prose-zama a:hover {
+    @apply text-terracotta-deep decoration-terracotta;
+  }
+
+  /* Visible, accessible focus states (WCAG 2.1 AA keyboard nav) */
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 2px solid var(--terracotta);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Respect users who reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Technical section label, e.g. "WHAT WE DO" — mono + wide tracking,
+     prefixed with a short structural rule line for an industrial feel. */
+  .label {
+    @apply inline-flex items-center gap-2.5 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-terracotta;
+  }
+  .label::before {
+    content: '';
+    @apply h-px w-6 bg-current opacity-60;
+  }
+
+  /* Thin gold divider rule */
+  .rule-gold {
+    @apply border-0 border-t border-gold/40;
+  }
+
+  /* Industrial "panel" card — crisp edge + hairline border */
+  .panel {
+    @apply border border-charcoal/10 bg-white;
+  }
+
+  /* Primary button (terracotta) — squared, industrial */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-none px-7 py-3.5
+           font-sans text-[0.8rem] font-semibold uppercase tracking-[0.14em] transition-all duration-200 ease-out
+           focus-visible:outline-offset-4;
+  }
+  .btn-primary {
+    @apply btn bg-terracotta text-cream hover:bg-terracotta-deep hover:-translate-y-0.5;
+  }
+  .btn-secondary {
+    @apply btn border border-charcoal/25 text-charcoal hover:border-charcoal hover:bg-charcoal hover:text-cream;
+  }
+  /* Button variant for use on the dark section */
+  .btn-on-dark {
+    @apply btn bg-cream text-ink hover:bg-white hover:-translate-y-0.5;
+  }
+
+  /* Underline-on-hover text link */
+  .link-underline {
+    @apply relative inline-flex items-center gap-1.5 font-medium text-charcoal transition-colors hover:text-terracotta;
+  }
+}
+
+@layer utilities {
+  /* --- Subtle scroll-reveal animation (progressive enhancement) ---
+     Elements marked with class "reveal" fade/slide in when scrolled
+     into view. If JS is off, or reduced-motion is set, content is
+     simply shown with no animation. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+}

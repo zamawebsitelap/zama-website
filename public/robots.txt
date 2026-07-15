@@ -1,0 +1,6 @@
+# Allow all crawlers (including AI answer engines) full access.
+User-agent: *
+Allow: /
+
+# Point crawlers to the auto-generated sitemap.
+Sitemap: https://wearezama.com/sitemap-index.xml

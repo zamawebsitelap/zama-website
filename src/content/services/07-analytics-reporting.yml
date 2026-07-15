@@ -1,0 +1,5 @@
+# A ZAMA service. `short` shows on the homepage card, `long` on the Services page.
+title: "Analytics & Reporting"
+order: 7
+short: "Clear dashboards and honest insight, so you always know what is working."
+long: "You should never wonder whether your marketing is working. We build clear dashboards and deliver honest, plain-language reporting so decisions are always grounded in data."

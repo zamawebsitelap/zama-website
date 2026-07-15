@@ -1,0 +1,26 @@
+---
+// The ZAMA wordmark. Uses the display serif for a refined, editorial feel.
+// To use an image logo instead, replace the <span> with an <img> pointing
+// at a file in /public/images/.
+import { site } from '../config/site';
+
+interface Props {
+  /** 'dark' = charcoal text (for light backgrounds), 'light' = cream text. */
+  tone?: 'dark' | 'light';
+  class?: string;
+}
+const { tone = 'dark', class: className = '' } = Astro.props;
+const color = tone === 'light' ? 'text-cream' : 'text-charcoal';
+---
+
+<span
+  class:list={[
+    'font-serif text-2xl font-semibold tracking-tight',
+    color,
+    className,
+  ]}
+  aria-hidden="true"
+>
+  {site.name}
+</span>
+<span class="sr-only">{site.name} — {site.tagline}</span>

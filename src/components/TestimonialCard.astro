@@ -1,0 +1,30 @@
+---
+// A single testimonial: quote + client photo, name, title, company.
+// Industrial panel styling (crisp edge, hairline border, square headshot).
+import Figure from './Figure.astro';
+
+interface Props {
+  quote: string;
+  name: string;
+  title: string;
+  company: string;
+  photo: string;
+  photoAlt: string;
+}
+const { quote, name, title, company, photo, photoAlt } = Astro.props;
+---
+
+<figure class="reveal panel flex h-full flex-col justify-between p-8">
+  <blockquote class="font-serif text-h3 italic leading-[1.35] text-charcoal">
+    &ldquo;{quote}&rdquo;
+  </blockquote>
+  <figcaption class="mt-8 flex items-center gap-4 border-t border-charcoal/10 pt-6">
+    <div class="w-14 shrink-0">
+      <Figure src={photo} alt={photoAlt} ratio="1/1" rounded={false} />
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-charcoal">{name}</p>
+      <p class="text-xs text-charcoal/60">{title}, {company}</p>
+    </div>
+  </figcaption>
+</figure>

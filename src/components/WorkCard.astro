@@ -1,0 +1,36 @@
+---
+// A case-study preview card (homepage "Selected work" + Work index).
+import Figure from './Figure.astro';
+
+interface Props {
+  href: string;
+  image: string;
+  imageAlt: string;
+  client: string;
+  industry: string;
+  title: string;
+  summary: string;
+}
+const { href, image, imageAlt, client, industry, title, summary } = Astro.props;
+---
+
+<article class="reveal group">
+  <a href={href} class="block">
+    <Figure src={image} alt={imageAlt} ratio="4/3" class="transition-transform duration-500 group-hover:scale-[1.015]" />
+    <div class="mt-5">
+      <div class="flex items-center gap-2 text-xs uppercase tracking-label text-charcoal/50">
+        <span>{client}</span>
+        <span aria-hidden="true" class="text-gold">/</span>
+        <span>{industry}</span>
+      </div>
+      <h3 class="mt-3 text-h3 font-semibold text-charcoal transition-colors group-hover:text-terracotta">
+        {title}
+      </h3>
+      <p class="mt-2 text-[0.95rem] leading-relaxed text-charcoal/70">{summary}</p>
+      <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-terracotta">
+        Read case study
+        <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">&rarr;</span>
+      </span>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,106 @@
+---
+// ===================================================================
+//  HEADER — sticky, minimal site navigation.
+//  Links come from `nav` in src/config/site.ts. To change what appears
+//  in the menu, edit that file (not this one).
+// ===================================================================
+import { nav } from '../config/site';
+import Logo from './Logo.astro';
+
+const currentPath = Astro.url.pathname;
+// Mark the active link (handles nested paths like /blog/my-post).
+const isActive = (href: string) =>
+  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<header
+  class="sticky top-0 z-40 border-b border-gold/20 bg-cream/85 backdrop-blur-md"
+>
+  <nav
+    class="container flex h-[4.5rem] items-center justify-between gap-6"
+    aria-label="Primary"
+  >
+    <a href="/" class="shrink-0" aria-label="ZAMA home">
+      <Logo />
+    </a>
+
+    {/* Desktop navigation */}
+    <ul class="hidden items-center gap-8 md:flex">
+      {
+        nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              class:list={[
+                'text-sm font-medium transition-colors hover:text-terracotta',
+                isActive(item.href) ? 'text-terracotta' : 'text-charcoal',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a href="/contact" class="btn-primary !px-5 !py-2.5 text-sm">
+          Start a project
+        </a>
+      </li>
+    </ul>
+
+    {/* Mobile menu toggle */}
+    <button
+      id="menu-toggle"
+      class="inline-flex items-center justify-center rounded-full p-2 text-charcoal md:hidden"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <line x1="3" y1="7" x2="21" y2="7" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="17" x2="21" y2="17" />
+      </svg>
+    </button>
+  </nav>
+
+  {/* Mobile navigation panel */}
+  <div id="mobile-menu" class="hidden border-t border-gold/20 bg-cream md:hidden">
+    <ul class="container flex flex-col gap-1 py-4">
+      {
+        nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              class:list={[
+                'block rounded-lg px-2 py-3 text-base font-medium transition-colors hover:text-terracotta',
+                isActive(item.href) ? 'text-terracotta' : 'text-charcoal',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+      <li class="pt-2">
+        <a href="/contact" class="btn-primary w-full">Start a project</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function () {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+      menu.classList.toggle('hidden', open);
+    });
+  })();
+</script>

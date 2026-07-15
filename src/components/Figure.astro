@@ -1,0 +1,43 @@
+---
+// ===================================================================
+//  FIGURE — a responsive image wrapper.
+//  Enforces an aspect ratio (so pages don't "jump" as images load =
+//  no layout shift / good Core Web Vitals) and lazy-loads by default.
+//  To swap an image, just change the `src` where this is used, or
+//  replace the file in /public/images/.
+// ===================================================================
+interface Props {
+  src: string;
+  alt: string; // ALWAYS describe the image (accessibility + SEO)
+  ratio?: string; // e.g. "16/10", "4/5", "1/1"
+  /** Use "eager" for above-the-fold images (like the hero), else "lazy". */
+  loading?: 'lazy' | 'eager';
+  class?: string;
+  rounded?: boolean;
+}
+const {
+  src,
+  alt,
+  ratio = '16/10',
+  loading = 'lazy',
+  class: className = '',
+  rounded = true,
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    'relative overflow-hidden bg-charcoal/5',
+    rounded && 'rounded-2xl',
+    className,
+  ]}
+  style={`aspect-ratio: ${ratio};`}
+>
+  <img
+    src={src}
+    alt={alt}
+    loading={loading}
+    decoding="async"
+    class="h-full w-full object-cover"
+  />
+</div>

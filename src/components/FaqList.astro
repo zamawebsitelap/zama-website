@@ -1,0 +1,28 @@
+---
+// Accessible FAQ accordion (uses native <details>, so it works with no
+// JavaScript). Questions come from src/content/pages/faq.yml.
+interface Faq { question: string; answer: string; }
+interface Props { items: Faq[]; }
+const { items } = Astro.props;
+---
+
+<div class="divide-y divide-gold/25 border-y border-gold/25">
+  {
+    items.map((item) => (
+      <details class="group py-2">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 text-left">
+          <span class="text-h3 font-serif font-medium text-charcoal">{item.question}</span>
+          <span
+            aria-hidden="true"
+            class="mt-1 shrink-0 text-2xl leading-none text-terracotta transition-transform duration-200 group-open:rotate-45"
+          >
+            +
+          </span>
+        </summary>
+        <p class="max-w-prose pb-5 pr-10 text-[0.98rem] leading-relaxed text-charcoal/75">
+          {item.answer}
+        </p>
+      </details>
+    ))
+  }
+</div>

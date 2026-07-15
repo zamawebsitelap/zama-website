@@ -1,0 +1,20 @@
+# =====================================================================
+#  WORK PAGE COPY
+#  The case studies themselves live in src/content/work/ (one .md file
+#  per project). This file holds the page's headline + intro.
+# =====================================================================
+
+seo:
+  title: "Our Work | ZAMA Digital Marketing Agency"
+  description: "See how ZAMA helps brands grow through strategy, creative, and performance marketing. Explore case studies and results from our boutique agency."
+
+label: "SELECTED WORK"
+h1: "Work we are proud of."
+intro: "Every brand we work with is different, but the goal is always the same: growth that shows up in the numbers and in how people feel about the brand. Explore a selection of our work."
+
+# Closing call-to-action band
+cta:
+  text: "Want results like these?"
+  button:
+    label: "Start a project"
+    href: "/contact"

@@ -1,0 +1,89 @@
+---
+// ===================================================================
+//  BLOG POST TEMPLATE (one page per file in src/content/blog/)
+// ===================================================================
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props { entry: CollectionEntry<'blog'>; }
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await entry.render();
+
+const dateLabel = d.pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const dateISO = d.pubDate.toISOString().split('T')[0];
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Blog', path: '/blog' },
+  { name: d.title, path: `/blog/${entry.slug}` },
+];
+---
+
+<BaseLayout
+  title={`${d.title} | ZAMA`}
+  description={d.description}
+  image={d.image}
+  type="article"
+  breadcrumbs={breadcrumbs}
+>
+  <article class="container py-16 md:py-24">
+    <div class="mx-auto max-w-2xl">
+      <a href="/blog" class="link-underline text-sm">
+        <span aria-hidden="true">&larr;</span> All posts
+      </a>
+      <header class="mt-8">
+        <div class="flex flex-wrap items-center gap-3 text-xs uppercase tracking-label text-charcoal/50">
+          <time datetime={dateISO}>{dateLabel}</time>
+          <span aria-hidden="true" class="text-gold">/</span>
+          <span>{d.author}</span>
+          {d.tags && d.tags.length ? (
+            <div class="flex flex-wrap items-center gap-2">
+              {d.tags.map((tag) => (
+                <span class="rounded-full border border-charcoal/10 bg-stone px-3 py-1 text-[0.72rem] uppercase tracking-[0.24em] text-charcoal/70">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          ) : null}
+        </div>
+        <h1 class="mt-4 text-h1 font-semibold text-charcoal">{d.title}</h1>
+        <p class="mt-5 text-lead text-charcoal/75">{d.description}</p>
+      </header>
+    </div>
+
+    <div class="mx-auto mt-10 max-w-3xl">
+      <Figure src={d.image} alt={d.imageAlt} ratio="16/9" loading="eager" />
+    </div>
+
+    {/* Post body (from the Markdown file) */}
+    <div
+      class="prose-zama mx-auto mt-12 max-w-2xl text-[1.08rem] leading-relaxed text-charcoal/85
+             [&_em]:text-charcoal/60
+             [&_h2]:mt-10 [&_h2]:font-serif [&_h2]:text-h2 [&_h2]:font-semibold [&_h2]:text-charcoal
+             [&_h3]:mt-8 [&_h3]:font-serif [&_h3]:text-h3 [&_h3]:font-semibold
+             [&_p]:mt-5 [&_ul]:mt-5 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mt-2"
+    >
+      <Content />
+    </div>
+
+    {/* Post footer CTA */}
+    <div class="mx-auto mt-16 max-w-2xl border-t border-gold/25 pt-10 text-center">
+      <p class="font-serif text-h3 font-medium text-charcoal">Want marketing that works as one?</p>
+      <a href="/contact" class="btn-primary mt-6">Start a project</a>
+    </div>
+  </article>
+</BaseLayout>

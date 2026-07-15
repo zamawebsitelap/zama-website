@@ -1,0 +1,33 @@
+---
+// Reusable closing call-to-action band.
+// `variant` controls the look: "terracotta" (warm accent) or "dark".
+interface Props {
+  heading: string;
+  line?: string;
+  buttonLabel: string;
+  buttonHref: string;
+  variant?: 'terracotta' | 'dark';
+}
+const {
+  heading,
+  line,
+  buttonLabel,
+  buttonHref,
+  variant = 'terracotta',
+} = Astro.props;
+
+const bg = variant === 'dark' ? 'bg-ink' : 'bg-terracotta';
+const btn = variant === 'dark' ? 'btn-on-dark' : 'btn bg-cream text-terracotta-deep hover:bg-white hover:-translate-y-0.5';
+---
+
+<section class={`${bg}`}>
+  <div class="container py-section text-center">
+    <h2 class="mx-auto max-w-3xl text-h2 font-semibold text-cream reveal">
+      {heading}
+    </h2>
+    {line && <p class="mx-auto mt-5 max-w-xl text-lead text-cream/80 reveal">{line}</p>}
+    <div class="mt-9 reveal">
+      <a href={buttonHref} class={btn}>{buttonLabel}</a>
+    </div>
+  </div>
+</section>

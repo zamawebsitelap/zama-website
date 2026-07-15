@@ -1,0 +1,20 @@
+# =====================================================================
+#  SERVICES PAGE COPY
+#  The individual service descriptions live in src/content/services/
+#  (one file per service). This file holds the page's headline + intro.
+# =====================================================================
+
+seo:
+  title: "Digital Marketing Services | ZAMA"
+  description: "Explore ZAMA's digital marketing services: brand strategy, paid ads, social media, email, SEO, analytics, and growth marketing for brands ready to scale."
+
+label: "WHAT WE DO"
+h1: "Digital marketing services that work as one."
+intro: "ZAMA is a full-service boutique agency. You can hire us for a single specialty or your entire marketing engine. Every service is led by senior talent and connected to a shared strategy, so nothing works in a silo."
+
+# Closing call-to-action band
+cta:
+  text: "Not sure where to start?"
+  button:
+    label: "Book a free consultation"
+    href: "/contact"

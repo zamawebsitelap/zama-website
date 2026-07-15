@@ -1,0 +1,23 @@
+---
+// Friendly 404 page.
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page not found | ZAMA"
+  description="The page you were looking for could not be found."
+  noindex={true}
+>
+  <section class="container flex min-h-[55vh] flex-col items-center justify-center py-24 text-center">
+    <p class="label">Error 404</p>
+    <h1 class="mt-4 text-h1 font-semibold text-charcoal">This page wandered off.</h1>
+    <p class="mt-5 max-w-md text-lead text-charcoal/70">
+      The page you are looking for does not exist or has moved. Let us point you
+      back in the right direction.
+    </p>
+    <div class="mt-9 flex flex-wrap justify-center gap-4">
+      <a href="/" class="btn-primary">Back home</a>
+      <a href="/contact" class="btn-secondary">Contact us</a>
+    </div>
+  </section>
+</BaseLayout>

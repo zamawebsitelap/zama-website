@@ -1,0 +1,12 @@
+{
+  "name": "ZAMA",
+  "short_name": "ZAMA",
+  "description": "Boutique digital marketing agency in Washington, DC.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF8F3",
+  "theme_color": "#FBF8F3",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

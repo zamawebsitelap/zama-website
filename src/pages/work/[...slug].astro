@@ -1,0 +1,130 @@
+---
+// ===================================================================
+//  CASE STUDY TEMPLATE (one page per file in src/content/work/)
+//  Shows the fields: Client, Industry, The Challenge, What We Did,
+//  The Results, Services Used — plus any extra Markdown body.
+// ===================================================================
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import TestimonialCard from '../../components/TestimonialCard.astro';
+
+// Generate a page for every (non-draft) case study.
+export async function getStaticPaths() {
+  const projects = await getCollection('work', ({ data }) => !data.draft);
+  return projects.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props { entry: CollectionEntry<'work'>; }
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await entry.render();
+const testimonials = await getCollection('testimonials');
+const projectTestimonials = testimonials.filter((t) => t.data.company === d.client);
+const testimonialsToShow = projectTestimonials.length > 0 ? projectTestimonials : testimonials.filter((t) => t.data.featured).slice(0, 2);
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Work', path: '/work' },
+  { name: d.client, path: `/work/${entry.slug}` },
+];
+
+// SEO for the case study.
+const seoTitle = `${d.title} | ZAMA Work`;
+const seoDesc = d.summary;
+---
+
+<BaseLayout title={seoTitle} description={seoDesc} image={d.image} type="article" breadcrumbs={breadcrumbs}>
+  <article>
+    {/* ---- Header ---- */}
+    <section class="container pb-10 pt-16 md:pt-24">
+      <a href="/work" class="link-underline text-sm">
+        <span aria-hidden="true">&larr;</span> All work
+      </a>
+      <div class="mt-8 max-w-3xl">
+        <div class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-label text-charcoal/50">
+          <span>{d.client}</span>
+          <span aria-hidden="true" class="text-gold">/</span>
+          <span>{d.industry}</span>
+        </div>
+        <h1 class="mt-4 text-h1 font-semibold text-charcoal">{d.title}</h1>
+        <p class="mt-6 text-lead text-charcoal/75">{d.summary}</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <Figure src={d.image} alt={d.imageAlt} ratio="16/9" loading="eager" />
+    </section>
+
+    {/* ---- Challenge / What we did / Results ---- */}
+    <section class="container py-section">
+      <div class="grid gap-12 md:grid-cols-[1.4fr_0.6fr] md:gap-16">
+        <div class="space-y-12">
+          <div class="reveal">
+            <h2 class="label !text-charcoal/45">The Challenge</h2>
+            <p class="mt-4 max-w-prose text-[1.05rem] leading-relaxed text-charcoal/80">{d.challenge}</p>
+          </div>
+          <div class="reveal">
+            <h2 class="label !text-charcoal/45">What We Did</h2>
+            <p class="mt-4 max-w-prose text-[1.05rem] leading-relaxed text-charcoal/80">{d.whatWeDid}</p>
+          </div>
+          <div class="reveal">
+            <h2 class="label !text-charcoal/45">The Results</h2>
+            <ul class="mt-4 space-y-3">
+              {
+                d.results.map((r) => (
+                  <li class="flex gap-3 text-[1.05rem] leading-relaxed text-charcoal/80">
+                    <span aria-hidden="true" class="mt-1 text-terracotta">&#10003;</span>
+                    <span>{r}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          {/* Optional longer story written in the Markdown body */}
+          <div class="prose-zama reveal max-w-prose border-t border-gold/25 pt-10 text-[1.02rem] leading-relaxed text-charcoal/80 [&_h2]:mt-8 [&_h2]:font-serif [&_h2]:text-h3 [&_h2]:font-semibold [&_p]:mt-4">
+            <Content />
+          </div>
+
+          {/* Testimonials section */}
+          <div class="reveal border-t border-gold/25 pt-10">
+            <h2 class="label !text-charcoal/45">Client Testimonials</h2>
+            <div class="mt-6 grid gap-6 lg:grid-cols-2">
+              {
+                testimonialsToShow.map((t) => (
+                  <TestimonialCard
+                    quote={t.data.quote}
+                    name={t.data.name}
+                    title={t.data.title}
+                    company={t.data.company}
+                    photo={t.data.photo}
+                    photoAlt={t.data.photoAlt}
+                  />
+                ))
+              }
+            </div>
+          </div>
+        </div>
+
+        {/* Sidebar: services used */}
+        <aside class="reveal md:sticky md:top-28 md:self-start">
+          <div class="rounded-2xl border border-gold/25 bg-white p-7">
+            <h2 class="label !text-charcoal/45">Services Used</h2>
+            <ul class="mt-4 space-y-2.5">
+              {
+                d.servicesUsed.map((s) => (
+                  <li class="text-sm font-medium text-charcoal">{s}</li>
+                ))
+              }
+            </ul>
+            <a href="/contact" class="btn-primary mt-7 w-full">Start a project</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

@@ -1,0 +1,53 @@
+---
+// ===================================================================
+//  SEO META COMPONENT
+//  Renders per-page <title>, meta description, canonical URL, and
+//  Open Graph + Twitter Card tags. You normally won't edit this —
+//  each page passes in its own title/description (which come from the
+//  content files in src/content/pages/).
+// ===================================================================
+import { site } from '../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Optional social-share image (path under /public). */
+  image?: string;
+  /** 'website' for most pages, 'article' for blog posts. */
+  type?: 'website' | 'article';
+  /** Set true to keep a page out of search results. */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  image = site.defaultOgImage,
+  type = 'website',
+  noindex = false,
+} = Astro.props;
+
+// Canonical + absolute image URL, derived from the current page.
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const imageUrl = new URL(image, site.url).href;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+{/* Open Graph */}
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:locale" content="en_US" />
+
+{/* Twitter Card */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />

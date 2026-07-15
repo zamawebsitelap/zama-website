@@ -1,0 +1,36 @@
+---
+// Reusable section header: technical label + serif heading + optional intro.
+// `index` shows a mono section number (e.g. "01") aligned to the right —
+// part of the industrial, gridded look.
+interface Props {
+  label?: string;
+  heading: string;
+  intro?: string;
+  index?: string;
+  align?: 'left' | 'center';
+  tone?: 'dark' | 'light'; // 'light' for use on the dark section
+  class?: string;
+}
+const {
+  label,
+  heading,
+  intro,
+  index,
+  align = 'left',
+  tone = 'dark',
+  class: className = '',
+} = Astro.props;
+
+const headingColor = tone === 'light' ? 'text-cream' : 'text-charcoal';
+const introColor = tone === 'light' ? 'text-cream/70' : 'text-charcoal/70';
+const alignment = align === 'center' ? 'text-center mx-auto' : '';
+---
+
+<div class:list={['max-w-2xl', alignment, className]}>
+  <div class:list={['flex items-center gap-4', align === 'center' && 'justify-center']}>
+    {label && <p class="label">{label}</p>}
+    {index && <span class="font-sans text-xs font-medium text-charcoal/35">/ {index}</span>}
+  </div>
+  <h2 class:list={['mt-5 text-h2 font-semibold', headingColor]}>{heading}</h2>
+  {intro && <p class:list={['mt-5 text-lead', introColor]}>{intro}</p>}
+</div>

@@ -1,0 +1,12 @@
+# =====================================================================
+#  BLOG INDEX PAGE COPY
+#  The posts themselves live in src/content/blog/ (one .md file each).
+# =====================================================================
+
+seo:
+  title: "Insights & Ideas | ZAMA Blog"
+  description: "Practical thinking on brand, content, and growth from the ZAMA team — a boutique digital marketing agency in Washington, DC."
+
+label: "INSIGHTS"
+h1: "Ideas worth your inbox."
+intro: "Practical thinking on brand, content, and growth from the ZAMA team."

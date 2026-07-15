@@ -1,0 +1,88 @@
+# =====================================================================
+#  HOME PAGE COPY  — edit the text between the quotes to change the page.
+# =====================================================================
+
+# --- SEO: browser tab title + Google/social description ---
+seo:
+  title: "ZAMA | Boutique Digital Marketing Agency in Washington, DC"
+  description: "ZAMA is a boutique digital marketing agency serving Washington, DC and South Florida, helping brands grow through strategy, creative, paid media, social, email, and SEO."
+
+# --- Hero (the opening screen) ---
+hero:
+  h1: "Every brand deserves its dawn, its sunrise, its light."
+  subhead: "Every brand has a moment before the world sees it. A quiet, still dark, full of everything it could become. ZAMA exists for that moment — from first light to full warmth, we help brands rise."
+  primaryCta:
+    label: "Start a project"
+    href: "/contact"
+  secondaryCta:
+    label: "See our work"
+    href: "/work"
+  # Swap this image in /public/images/ to change the hero visual.
+  # To use your own photo: add it to /public/images/ (e.g. hero-portrait.jpg)
+  # and point this line at it. Always update the alt text below too.
+  image: "/images/savoir00001.jpg"
+  imageAlt: "A real hero photo for ZAMA, a boutique digital marketing agency in Washington, DC."
+
+# --- Positioning statement ---
+positioning: "A boutique agency that takes brands from unseen to unmistakable, from the first light of an idea to the full warmth of being known. We bring strategy, creative, and growth together with senior attention and care."
+
+# --- Services overview (cards are pulled from src/content/services/) ---
+services:
+  label: "WHAT WE DO"
+  heading: "One team for your whole marketing engine."
+  intro: "From the first idea to the final report, ZAMA connects strategy, creative, and performance so your marketing works as one. Here is how we help brands grow."
+
+# --- Selected work (case studies are pulled from src/content/work/) ---
+selectedWork:
+  label: "SELECTED WORK"
+  heading: "Brands we have helped grow."
+  intro: "A look at the strategy, creative, and campaigns behind the results."
+  cta:
+    label: "View all work"
+    href: "/work"
+
+# --- How we work ---
+approach:
+  label: "HOW WE WORK"
+  heading: "A process built for clarity and results."
+  steps:
+    - title: "Discover."
+      text: "We learn your brand, your goals, and your customers before we touch a tactic."
+    - title: "Strategize."
+      text: "We build a clear, prioritized plan tied to the metrics that matter."
+    - title: "Create & Launch."
+      text: "Our team produces the creative and campaigns, then puts them live."
+    - title: "Measure & Grow."
+      text: "We report transparently, optimize continuously, and scale what works."
+
+# --- Results (the dramatic dark section) ---
+results:
+  heading: "Marketing you can measure."
+  line: "We tie our work to outcomes, not vanity metrics. Every engagement starts with the numbers we are here to move."
+
+# --- Testimonials section (the quotes live in src/content/testimonials/) ---
+testimonials:
+  label: "KIND WORDS"
+  heading: "What our clients say."
+
+# --- Insights / blog teaser (posts pulled from src/content/blog/) ---
+insights:
+  label: "INSIGHTS"
+  heading: "Ideas worth your inbox."
+  intro: "Practical thinking on brand, content, and growth from the ZAMA team."
+  cta:
+    label: "Read the blog"
+    href: "/blog"
+
+# --- FAQ section (questions live in src/content/pages/faq.yml) ---
+faq:
+  label: "FAQ"
+  heading: "Frequently asked questions"
+
+# --- Closing contact band ---
+contactBand:
+  heading: "Let's build something worth talking about."
+  line: "Tell us about your brand and where you want to go. We will show you how to get there."
+  button:
+    label: "Start a project"
+    href: "/contact"

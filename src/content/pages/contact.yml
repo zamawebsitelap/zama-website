@@ -1,0 +1,58 @@
+# =====================================================================
+#  CONTACT PAGE COPY
+# =====================================================================
+
+seo:
+  title: "Contact ZAMA | Start a Project"
+  description: "Ready to grow? Contact ZAMA to start a project or book a free consultation with our boutique digital marketing team in Washington, DC."
+
+label: "GET IN TOUCH"
+h1: "Let's build something worth talking about."
+intro: "Tell us a little about your brand and your goals. We will get back to you within two to three business days to talk about how ZAMA can help."
+
+# Photo shown on the contact page. To use your own, add it to /public/images/
+# (e.g. contact-portrait.jpg) and point this line at it. Update the alt text too.
+image: "/images/contact-portrait.jpg"
+imageAlt: "Portrait of the founder of ZAMA, a boutique digital marketing agency in Washington, DC."
+
+# --- Contact form ---
+# Each field below renders an input. Edit labels, mark fields optional,
+# or change the type (text / email / url / textarea / select).
+form:
+  fields:
+    - name: "name"
+      label: "Name"
+      type: "text"
+      required: true
+    - name: "email"
+      label: "Email"
+      type: "email"
+      required: true
+    - name: "company"
+      label: "Company"
+      type: "text"
+      required: false
+    - name: "website"
+      label: "Website"
+      type: "url"
+      required: false
+    - name: "help"
+      label: "What can we help with?"
+      type: "text"
+      required: false
+    - name: "budget"
+      label: "Budget range (optional)"
+      type: "text"
+      required: false
+    - name: "message"
+      label: "Message"
+      type: "textarea"
+      required: true
+  submitLabel: "Send message"
+  # Shown after a successful (demo) submit. This form is front-end only —
+  # see the README to connect it to a real form service (e.g. Formspree).
+  successMessage: "Thanks — your message is on its way. We'll reply within one business day."
+
+# --- Alternate contact + socials ---
+altContactText: "Prefer email or phone? Reach us at"
+# (the email address itself comes from src/config/site.ts)

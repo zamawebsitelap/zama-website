@@ -1,0 +1,103 @@
+---
+// ===================================================================
+//  STRUCTURED DATA (JSON-LD)
+//  Machine-readable info that helps Google and AI answer engines
+//  understand and quote ZAMA. Site-wide types (Organization, WebSite,
+//  ProfessionalService + LocalBusiness) render on every page. Pages
+//  can also pass in `breadcrumbs` and `faqs`.
+//  You normally won't edit this — the values come from
+//  src/config/site.ts and your content files.
+// ===================================================================
+import { site, socials } from '../config/site';
+
+interface Crumb {
+  name: string;
+  path: string; // e.g. "/services"
+}
+interface Faq {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  breadcrumbs?: Crumb[];
+  faqs?: Faq[];
+}
+
+const { breadcrumbs = [], faqs = [] } = Astro.props;
+
+const orgId = `${site.url}/#organization`;
+const websiteId = `${site.url}/#website`;
+
+// --- Core site-wide graph ---
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': 'Organization',
+    '@id': orgId,
+    name: site.name,
+    url: site.url,
+    email: site.email,
+    description: site.description,
+    logo: new URL('/images/logo-mark.svg', site.url).href,
+    sameAs: socials.map((s) => s.href),
+  },
+  {
+    '@type': 'WebSite',
+    '@id': websiteId,
+    url: site.url,
+    name: site.name,
+    publisher: { '@id': orgId },
+    inLanguage: 'en-US',
+  },
+  {
+    // One node typed as BOTH ProfessionalService and LocalBusiness.
+    '@type': ['ProfessionalService', 'LocalBusiness'],
+    '@id': `${site.url}/#business`,
+    name: site.name,
+    url: site.url,
+    email: site.email,
+    description: site.description,
+    image: new URL(site.defaultOgImage, site.url).href,
+    parentOrganization: { '@id': orgId },
+    priceRange: '$$$',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: site.location.city,
+      addressRegion: site.location.region,
+      addressCountry: site.location.countryCode,
+    },
+    areaServed: site.location.areaServed,
+    sameAs: socials.map((s) => s.href),
+    ...(site.phone ? { telephone: site.phone } : {}),
+  },
+];
+
+// --- Breadcrumbs (per page) ---
+if (breadcrumbs.length > 0) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: new URL(c.path, site.url).href,
+    })),
+  });
+}
+
+// --- FAQ (per page) ---
+if (faqs.length > 0) {
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  });
+}
+
+const jsonLd = { '@context': 'https://schema.org', '@graph': graph };
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
