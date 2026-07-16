@@ -62,12 +62,8 @@ const testimonials = defineCollection({
     name: z.string(), // client name
     title: z.string(), // their role, e.g. "CEO"
     company: z.string(), // their company
-<<<<<<< HEAD
     website: z.string().url().optional(), // optional company website URL
-    photo: z.string().default('/images/testimonial-1.svg'), // headshot in /public/images
-=======
-    photo: z.string().default('/images/og-default.jpg'), // headshot in src/assets/images
->>>>>>> origin/main
+    photo: z.string().default('/images/og-default.jpg'), // headshot in /public/images
     photoAlt: z.string().default('Client headshot'),
     order: z.number().default(0),
     featured: z.boolean().default(true), // show on the homepage

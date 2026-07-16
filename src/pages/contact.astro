@@ -76,10 +76,6 @@ const breadcrumbs = [
 
       {/* ---- Right: contact form ---- */}
       <div class="rounded-3xl border border-gold/25 bg-white p-7 md:p-10">
-<<<<<<< HEAD
-        <form class="space-y-6" action={`mailto:${site.email}`} method="post" enctype="text/plain">
-          <input type="hidden" name="subject" value="New website inquiry from wearezama.com" />
-=======
         <form
           id="contact-form"
           name="contact"
@@ -97,7 +93,6 @@ const breadcrumbs = [
               Don't fill this out if you're human: <input name="bot-field" />
             </label>
           </p>
->>>>>>> origin/main
           {
             fields.map((f) => (
               <div>
@@ -128,8 +123,6 @@ const breadcrumbs = [
           }
 
           <button type="submit" class="btn-primary w-full">{c.form.submitLabel}</button>
-<<<<<<< HEAD
-=======
 
           {/* Success message (revealed after Netlify redirects back with ?success=1) */}
           <p
@@ -139,14 +132,11 @@ const breadcrumbs = [
           >
             {c.form.successMessage}
           </p>
->>>>>>> origin/main
         </form>
       </div>
     </div>
   </section>
 </BaseLayout>
-<<<<<<< HEAD
-=======
 
 <script is:inline>
   // The form posts to Netlify Forms, which redirects back here with
@@ -159,4 +149,3 @@ const breadcrumbs = [
     success.scrollIntoView({ behavior: 'smooth', block: 'center' });
   })();
 </script>
->>>>>>> origin/main

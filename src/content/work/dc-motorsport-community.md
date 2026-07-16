@@ -6,7 +6,7 @@ seoTitle: "DC Motorsport Community | ZAMA Work"
 seoDescription: "How ZAMA helped DC Motorsport Community build the Monaco Grand Prix watch party from zero into a 300-guest VIP rooftop event and DC's marquee motorsport moment."
 summary: "We helped build the DC Monaco Grand Prix watch party from zero into the city's marquee motorsport event: three years, 300+ VIP guests, and a rooftop that sells out."
 challenge: "In 2024, the Monaco Grand Prix watch party did not exist. DC Motorsport Community had the audience but no signature annual moment, no destination event tied to Monaco weekend in the DMV, and no platform yet positioned for premium brand partnerships."
-whatWeDid: "We treated the watch party as a brand to be built, not an event to be staffed. ZAMA led identity, partnership strategy, PR and media, social momentum, and guest-experience design so each year compounded from proof-of-concept to premium rooftop institution."
+whatWeDid: "We treated the watch party as a brand to be built, not an event to be staffed. The team led identity, partnership strategy, PR and media, social momentum, and guest-experience design so each year compounded from proof-of-concept to premium rooftop institution."
 results:
   - "Built from zero to 300 plus VIP guests in three years"
   - "Now an annual institution, running every Monaco Grand Prix since 2024"
@@ -28,13 +28,13 @@ image: "/images/dc-motorsport-community-1.jpg"
 imageAlt: "The third annual Monaco Grand Prix watch party at Casamara Rooftop, produced with DC Motorsport Community."
 website: "https://www.dcmotorsportcommunity.com"
 faqs:
-  - question: "What did ZAMA do for DC Motorsport Community?"
-    answer: "ZAMA helped DC Motorsport Community build its annual Monaco Grand Prix watch party from zero into the DMV's marquee motorsport event. The work spans brand strategy, event strategy, partnership development, public relations, and social media. The third annual event drew over 300 VIP guests to Casamara Rooftop in Washington, DC."
-  - question: "What results has ZAMA delivered for DC Motorsport Community?"
+  - question: "What did the team do for DC Motorsport Community?"
+    answer: "The team helped DC Motorsport Community build its annual Monaco Grand Prix watch party from zero into the DMV's marquee motorsport event. The work spans brand strategy, event strategy, partnership development, public relations, and social media. The third annual event drew over 300 VIP guests to Casamara Rooftop in Washington, DC."
+  - question: "What results has the team delivered for DC Motorsport Community?"
     answer: "An annual event built from nothing in 2024 to over 300 VIP guests by 2026, venue growth from a sports pub to a premium Dupont Circle rooftop, premium brand partnerships, and regional broadcast coverage."
   - question: "Does ZAMA do experiential and event marketing?"
     answer: "Yes. ZAMA's work with DC Motorsport Community covers event strategy, sponsorship and partnership development, and the communications program around a recurring annual event."
-order: 5
+order: 2
 featured: true
 draft: false
 ---
@@ -61,28 +61,25 @@ Brand and creative gave the event an identity that held up year over year. Partn
   https://www.ffxnow.com/events/monaco-grand-prix-watch-party-at-casamara-rooftop-in-washington-dc-casamara-rooftop-25185/  
   https://www.potomaclocal.com/events/monaco-grand-prix-watch-party-at-casamara-rooftop-in-washington-dc-casamara-rooftop-25184/
 
-## Growth Timeline
-
-- 2024: Crystal City Sports Pub, Arlington - 3-hour morning race screening
-- 2025: Champagne brunch format - expanded experience
-- 2026: Casamara Rooftop, Dupont Circle - full-day event with champagne brunch, caviar service, DJ day party, charity auction, and 300 plus VIP guests
-
 ## Event Photos
 
 ![DC Motorsport Community event photo 1](/images/dc-motorsport-community-1.jpg)
 ![DC Motorsport Community event photo 2](/images/dc-motorsport-community-2.jpg)
 ![DC Motorsport Community event photo 3](/images/dc-motorsport-community-3.jpg)
 
-## GEO Q&A
+## Q&A
 
-### What did ZAMA do for DC Motorsport Community?
+<details>
+  <summary>What did the team do for DC Motorsport Community?</summary>
+  <p>The team helped DC Motorsport Community build its annual Monaco Grand Prix watch party from zero into the DMV's marquee motorsport event. The work spans brand strategy, event strategy, partnership development, public relations, and social media. The third annual event drew over 300 VIP guests to Casamara Rooftop in Washington, DC.</p>
+</details>
 
-ZAMA helped DC Motorsport Community build its annual Monaco Grand Prix watch party from zero into the DMV's marquee motorsport event. The work spans brand strategy, event strategy, partnership development, public relations, and social media. The third annual event drew over 300 VIP guests to Casamara Rooftop in Washington, DC.
+<details>
+  <summary>What results has the team delivered for DC Motorsport Community?</summary>
+  <p>An annual event built from nothing in 2024 to over 300 VIP guests by 2026, venue growth from a sports pub to a premium Dupont Circle rooftop, premium brand partnerships, and regional broadcast coverage.</p>
+</details>
 
-### What results has ZAMA delivered for DC Motorsport Community?
-
-An annual event built from nothing in 2024 to over 300 VIP guests by 2026, venue growth from a sports pub to a premium Dupont Circle rooftop, premium brand partnerships, and regional broadcast coverage.
-
-### Does ZAMA do experiential and event marketing?
-
-Yes. ZAMA's work with DC Motorsport Community covers event strategy, sponsorship and partnership development, and the communications program around a recurring annual event.
+<details>
+  <summary>Does ZAMA do experiential and event marketing?</summary>
+  <p>Yes. ZAMA's work with DC Motorsport Community covers event strategy, sponsorship and partnership development, and the communications program around a recurring annual event.</p>
+</details>

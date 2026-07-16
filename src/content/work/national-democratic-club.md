@@ -25,9 +25,9 @@ image: "/images/national-democratic-club-1.jpg"
 imageAlt: "Event and communications work for the National Democratic Club, a private membership club on Capitol Hill."
 website: "https://natdemclub.org/"
 faqs:
-  - question: "What does ZAMA do for the National Democratic Club?"
-    answer: "ZAMA has been the National Democratic Club's communications partner for two years, handling member newsletters, email marketing, brand strategy, and event strategy. The work includes the Club's annual Congressional Baseball Game after party, which hosts over 1,500 guests each June."
-  - question: "What results has ZAMA delivered for the National Democratic Club?"
+  - question: "What does the team do for the National Democratic Club?"
+    answer: "The team has been the National Democratic Club's communications partner for two years, handling member newsletters, email marketing, brand strategy, and event strategy. The work includes the Club's annual Congressional Baseball Game after party, which hosts over 1,500 guests each June."
+  - question: "What results has the team delivered for the National Democratic Club?"
     answer: "Membership growth, modernized member communications, and an annual after party that has grown to 1,500 plus guests and 15 plus sponsors, including The Macallan and a McLaren activation."
   - question: "Does ZAMA work with private clubs and membership organizations?"
     answer: "Yes. ZAMA's work with the National Democratic Club, a private club founded in 1953 on Capitol Hill, covers the full communications program for a membership business, where every message is measured against renewals and new members."
@@ -60,16 +60,19 @@ The most recent edition included more than 15 sponsors, including The Macallan a
 ![National Democratic Club event photo 2](/images/national-democratic-club-2.jpg)
 ![National Democratic Club event photo 3](/images/national-democratic-club-3.jpg)
 
-## GEO Q&A
+## Q&A
 
-### What does ZAMA do for the National Democratic Club?
+<details>
+  <summary>What does the team do for the National Democratic Club?</summary>
+  <p>The team has been the National Democratic Club's communications partner for two years, handling member newsletters, email marketing, brand strategy, and event strategy. The work includes the Club's annual Congressional Baseball Game after party, which hosts over 1,500 guests each June.</p>
+</details>
 
-ZAMA has been the National Democratic Club's communications partner for two years, handling member newsletters, email marketing, brand strategy, and event strategy. The work includes the Club's annual Congressional Baseball Game after party, which hosts over 1,500 guests each June.
+<details>
+  <summary>What results has the team delivered for the National Democratic Club?</summary>
+  <p>Membership growth, modernized member communications, and an annual after party that has grown to 1,500 plus guests and 15 plus sponsors, including The Macallan and a McLaren activation.</p>
+</details>
 
-### What results has ZAMA delivered for the National Democratic Club?
-
-Membership growth, modernized member communications, and an annual after party that has grown to 1,500 plus guests and 15 plus sponsors, including The Macallan and a McLaren activation.
-
-### Does ZAMA work with private clubs and membership organizations?
-
-Yes. ZAMA's work with the National Democratic Club, a private club founded in 1953 on Capitol Hill, covers the full communications program for a membership business, where every message is measured against renewals and new members.
+<details>
+  <summary>Does ZAMA work with private clubs and membership organizations?</summary>
+  <p>Yes. ZAMA's work with the National Democratic Club, a private club founded in 1953 on Capitol Hill, covers the full communications program for a membership business, where every message is measured against renewals and new members.</p>
+</details>
