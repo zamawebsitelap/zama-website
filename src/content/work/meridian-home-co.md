@@ -18,7 +18,7 @@ servicesUsed:
   - "Creative Strategy"
 image: "/images/silver-and-sons.jpg"
 imageAlt: "Brand and social media creative for Silver and Sons."
-website: "https://www.silverandsonsbbq.com"
+website: "https://www.silverandsons.com"
 order: 1
 featured: true
 draft: false
