@@ -74,7 +74,7 @@ const seoDesc = d.seoDescription ?? d.summary;
     </section>
 
     <section class="container">
-      <Figure src={d.image} alt={d.imageAlt} ratio="16/9" loading="eager" />
+      <Figure src={d.image} alt={d.imageAlt} ratio="16/9" loading="eager" fetchpriority="high" sizes="(min-width: 1280px) 1200px, 100vw" />
     </section>
 
     {/* ---- Challenge / What we did / Results ---- */}

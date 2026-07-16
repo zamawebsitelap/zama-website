@@ -6,7 +6,9 @@
 //  each page passes in its own title/description (which come from the
 //  content files in src/content/pages/).
 // ===================================================================
+import { getImage } from 'astro:assets';
 import { site } from '../config/site';
+import { resolveAsset } from '../lib/images';
 
 interface Props {
   title: string;
@@ -28,8 +30,14 @@ const {
 } = Astro.props;
 
 // Canonical + absolute image URL, derived from the current page.
+// Social scrapers need a raster image at a stable absolute URL, so
+// pipeline-managed images are rendered to a 1200px-wide JPEG here.
 const canonical = new URL(Astro.url.pathname, site.url).href;
-const imageUrl = new URL(image, site.url).href;
+const asset = resolveAsset(image);
+const ogImage = asset
+  ? await getImage({ src: asset, width: 1200, format: 'jpeg' })
+  : null;
+const imageUrl = new URL(ogImage ? ogImage.src : image, site.url).href;
 ---
 
 <title>{title}</title>

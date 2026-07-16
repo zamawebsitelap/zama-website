@@ -62,8 +62,12 @@ const testimonials = defineCollection({
     name: z.string(), // client name
     title: z.string(), // their role, e.g. "CEO"
     company: z.string(), // their company
+<<<<<<< HEAD
     website: z.string().url().optional(), // optional company website URL
     photo: z.string().default('/images/testimonial-1.svg'), // headshot in /public/images
+=======
+    photo: z.string().default('/images/og-default.jpg'), // headshot in src/assets/images
+>>>>>>> origin/main
     photoAlt: z.string().default('Client headshot'),
     order: z.number().default(0),
     featured: z.boolean().default(true), // show on the homepage
@@ -78,7 +82,7 @@ const blog = defineCollection({
     description: z.string(), // used for previews + SEO meta description
     pubDate: z.date(), // e.g. 2026-01-15
     author: z.string().default('The ZAMA Team'),
-    image: z.string().default('/images/blog-default.svg'),
+    image: z.string().default('/images/og-default.jpg'),
     imageAlt: z.string().default('ZAMA insights'),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false), // set true to hide while editing

@@ -3,15 +3,27 @@
 //  FIGURE - a responsive image wrapper.
 //  Enforces an aspect ratio (so pages don't "jump" as images load =
 //  no layout shift / good Core Web Vitals) and lazy-loads by default.
+//  Images that live in src/assets/images/ are served through Astro's
+//  image pipeline (resized per `widths` + converted to WebP at build
+//  time); anything still in /public is rendered as-is.
 //  To swap an image, just change the `src` where this is used, or
-//  replace the file in /public/images/.
+//  replace the file in src/assets/images/.
 // ===================================================================
+import { Image } from 'astro:assets';
+import { resolveAsset } from '../lib/images';
+
 interface Props {
   src: string;
   alt: string; // ALWAYS describe the image (accessibility + SEO)
   ratio?: string; // e.g. "16/10", "4/5", "1/1"
   /** Use "eager" for above-the-fold images (like the hero), else "lazy". */
   loading?: 'lazy' | 'eager';
+  /** Candidate widths (px) to generate for the srcset. */
+  widths?: number[];
+  /** How wide the image renders, for the browser to pick a candidate. */
+  sizes?: string;
+  /** Set "high" on the LCP image (the hero) so it loads first. */
+  fetchpriority?: 'high' | 'low' | 'auto';
   class?: string;
   rounded?: boolean;
 }
@@ -20,9 +32,18 @@ const {
   alt,
   ratio = '16/10',
   loading = 'lazy',
+  widths = [400, 800, 1200, 1600],
+  sizes = '(min-width: 768px) 50vw, 100vw',
+  fetchpriority = 'auto',
   class: className = '',
   rounded = true,
 } = Astro.props;
+
+const asset = resolveAsset(src);
+// Never ask the pipeline to upscale: cap candidates at the source width.
+const srcsetWidths = asset
+  ? [...new Set([...widths.filter((w) => w < asset.width), asset.width])]
+  : [];
 ---
 
 <div
@@ -33,11 +54,27 @@ const {
   ]}
   style={`aspect-ratio: ${ratio};`}
 >
-  <img
-    src={src}
-    alt={alt}
-    loading={loading}
-    decoding="async"
-    class="h-full w-full object-cover"
-  />
+  {
+    asset ? (
+      <Image
+        src={asset}
+        alt={alt}
+        widths={srcsetWidths}
+        sizes={sizes}
+        loading={loading}
+        decoding="async"
+        fetchpriority={fetchpriority}
+        class="h-full w-full object-cover"
+      />
+    ) : (
+      <img
+        src={src}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+        fetchpriority={fetchpriority}
+        class="h-full w-full object-cover"
+      />
+    )
+  }
 </div>
