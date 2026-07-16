@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ================================================================
-   ZAMA — GLOBAL STYLES
+   ZAMA - GLOBAL STYLES
    The brand palette is also exposed as CSS variables here (handy
    reference; the Tailwind theme in tailwind.config.mjs is the
    source of truth for utility classes).
@@ -29,7 +29,7 @@
     font-feature-settings: 'kern', 'liga', 'calt';
   }
 
-  /* Subtle film-grain overlay — adds analog texture so surfaces don't
+  /* Subtle film-grain overlay - adds analog texture so surfaces don't
      read as flat/digital. Sits above everything but ignores clicks. */
   body::before {
     content: '';
@@ -74,7 +74,7 @@
 }
 
 @layer components {
-  /* Technical section label, e.g. "WHAT WE DO" — mono + wide tracking,
+  /* Technical section label, e.g. "WHAT WE DO" - mono + wide tracking,
      prefixed with a short structural rule line for an industrial feel. */
   .label {
     @apply inline-flex items-center gap-2.5 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-terracotta;
@@ -89,12 +89,12 @@
     @apply border-0 border-t border-gold/40;
   }
 
-  /* Industrial "panel" card — crisp edge + hairline border */
+  /* Industrial "panel" card - crisp edge + hairline border */
   .panel {
     @apply border border-charcoal/10 bg-white;
   }
 
-  /* Primary button (terracotta) — squared, industrial */
+  /* Primary button (terracotta) - squared, industrial */
   .btn {
     @apply inline-flex items-center justify-center gap-2 rounded-none px-7 py-3.5
            font-sans text-[0.8rem] font-semibold uppercase tracking-[0.14em] transition-all duration-200 ease-out

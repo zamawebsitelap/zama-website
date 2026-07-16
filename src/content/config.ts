@@ -3,7 +3,7 @@ import { defineCollection, z } from 'astro:content';
 // ===================================================================
 //  CONTENT COLLECTIONS
 //  These describe the "shape" of your editable content so Astro can
-//  validate it. You normally won't edit this file — you'll edit the
+//  validate it. You normally won't edit this file - you'll edit the
 //  content itself in the folders below:
 //
 //    src/content/pages/     -> page copy (headlines, paragraphs)   [.yml]
@@ -44,6 +44,7 @@ const work = defineCollection({
     servicesUsed: z.array(z.string()), // "Services Used"
     image: z.string(), // path under /public, e.g. /images/work-1.svg
     imageAlt: z.string(), // describe the image for accessibility + SEO
+    website: z.string().url().optional(), // optional client website URL
     order: z.number().default(0),
     featured: z.boolean().default(false), // show in homepage "Selected work"
     draft: z.boolean().default(false), // set true to hide while editing
@@ -58,6 +59,7 @@ const testimonials = defineCollection({
     name: z.string(), // client name
     title: z.string(), // their role, e.g. "CEO"
     company: z.string(), // their company
+    website: z.string().url().optional(), // optional company website URL
     photo: z.string().default('/images/testimonial-1.svg'), // headshot in /public/images
     photoAlt: z.string().default('Client headshot'),
     order: z.number().default(0),

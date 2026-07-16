@@ -2,7 +2,7 @@
 // ===================================================================
 //  CASE STUDY TEMPLATE (one page per file in src/content/work/)
 //  Shows the fields: Client, Industry, The Challenge, What We Did,
-//  The Results, Services Used — plus any extra Markdown body.
+//  The Results, Services Used - plus any extra Markdown body.
 // ===================================================================
 import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -46,7 +46,15 @@ const seoDesc = d.summary;
       </a>
       <div class="mt-8 max-w-3xl">
         <div class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-label text-charcoal/50">
-          <span>{d.client}</span>
+          {
+            d.website ? (
+              <a href={d.website} target="_blank" rel="noopener noreferrer" class="underline decoration-gold/50 underline-offset-2 hover:text-charcoal">
+                {d.client}
+              </a>
+            ) : (
+              <span>{d.client}</span>
+            )
+          }
           <span aria-hidden="true" class="text-gold">/</span>
           <span>{d.industry}</span>
         </div>
@@ -101,6 +109,7 @@ const seoDesc = d.summary;
                     name={t.data.name}
                     title={t.data.title}
                     company={t.data.company}
+                    website={t.data.website}
                     photo={t.data.photo}
                     photoAlt={t.data.photoAlt}
                   />

@@ -12,13 +12,13 @@ draft: false
 *This is an example post so you can see how the blog looks. Edit it or
 delete it, then add your own posts as Markdown files.*
 
-Beautiful work should also be effective work. The two are not in tension —
+Beautiful work should also be effective work. The two are not in tension -
 but only if you decide, up front, what you are actually trying to move.
 
 ## Start with the number
 
 Before we design a thing, we ask what result the work is accountable to.
-Revenue, qualified leads, retention, average order value — the specific
+Revenue, qualified leads, retention, average order value - the specific
 number depends on the brand, but there is always a number.
 
 ## Vanity metrics vs. outcomes
@@ -30,7 +30,7 @@ headline is always the result you can take to the bank.
 ## Honest reporting builds trust
 
 Clear dashboards, plain-language insight, and straight answers about what
-is and is not working. That transparency is not just nice to have — it is
+is and is not working. That transparency is not just nice to have - it is
 how good decisions get made.
 
 Measurable does not mean joyless. It means the beautiful work is also

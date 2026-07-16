@@ -1,5 +1,5 @@
 // ===================================================================
-//  RSS FEED for the blog — available at /rss.xml
+//  RSS FEED for the blog - available at /rss.xml
 //  Lets readers subscribe and helps search engines discover new posts.
 // ===================================================================
 import rss from '@astrojs/rss';
@@ -12,7 +12,7 @@ export async function GET(context) {
   );
 
   return rss({
-    title: 'ZAMA — Insights',
+    title: 'ZAMA - Insights',
     description:
       'Practical thinking on brand, content, and growth from the ZAMA team.',
     site: context.site ?? site.url,

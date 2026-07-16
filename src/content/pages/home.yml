@@ -1,5 +1,5 @@
 # =====================================================================
-#  HOME PAGE COPY  — edit the text between the quotes to change the page.
+#  HOME PAGE COPY  - edit the text between the quotes to change the page.
 # =====================================================================
 
 # --- SEO: browser tab title + Google/social description ---
@@ -10,7 +10,7 @@ seo:
 # --- Hero (the opening screen) ---
 hero:
   h1: "Every brand deserves its dawn, its sunrise, its light."
-  subhead: "Every brand has a moment before the world sees it. A quiet, still dark, full of everything it could become. ZAMA exists for that moment — from first light to full warmth, we help brands rise."
+  subhead: "Every brand has a moment before the world sees it. A quiet, still dark, full of everything it could become. ZAMA exists for that moment - from first light to full warmth, we help brands rise."
   primaryCta:
     label: "Start a project"
     href: "/contact"
