@@ -76,7 +76,23 @@ const breadcrumbs = [
 
       {/* ---- Right: contact form ---- */}
       <div class="rounded-3xl border border-gold/25 bg-white p-7 md:p-10">
-        <form id="contact-form" method="POST" action="https://formspree.io/f/xyzgbjnj" class="space-y-6" novalidate>
+        <form
+          id="contact-form"
+          name="contact"
+          method="POST"
+          action="/contact?success=1"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="space-y-6"
+        >
+          {/* Netlify Forms: identifies which form was submitted */}
+          <input type="hidden" name="form-name" value="contact" />
+          {/* Honeypot field — hidden from people, catches spam bots */}
+          <p class="hidden" aria-hidden="true">
+            <label>
+              Don't fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
           {
             fields.map((f) => (
               <div>
@@ -108,7 +124,7 @@ const breadcrumbs = [
 
           <button type="submit" class="btn-primary w-full">{c.form.submitLabel}</button>
 
-          {/* Success message (revealed by the script on submit) */}
+          {/* Success message (revealed after Netlify redirects back with ?success=1) */}
           <p
             id="form-success"
             role="status"
@@ -123,21 +139,13 @@ const breadcrumbs = [
 </BaseLayout>
 
 <script is:inline>
-  // Front-end-only demo handler. Replace with a real form service to
-  // actually receive submissions (see README).
+  // The form posts to Netlify Forms, which redirects back here with
+  // ?success=1 — reveal the confirmation message when it does.
   (function () {
-    const form = document.getElementById('contact-form');
+    if (new URLSearchParams(window.location.search).get('success') !== '1') return;
     const success = document.getElementById('form-success');
-    if (!form || !success) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      form.reset();
-      success.classList.remove('hidden');
-      success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
+    if (!success) return;
+    success.classList.remove('hidden');
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
   })();
 </script>

@@ -1,10 +1,10 @@
 ---
 // ===================================================================
 //  FOOTER — the dark, high-contrast closing section.
-//  Nav, socials, legal links, and contact all come from
+//  Nav, socials, and contact all come from
 //  src/config/site.ts. Edit that file to change them.
 // ===================================================================
-import { site, nav, socials, legal } from '../config/site';
+import { site, nav, socials } from '../config/site';
 
 const year = new Date().getFullYear();
 ---
@@ -72,19 +72,8 @@ const year = new Date().getFullYear();
 
     <hr class="mt-14 border-0 border-t border-white/10" />
 
-    <div class="mt-6 flex flex-col gap-4 text-xs text-cream/55 sm:flex-row sm:items-center sm:justify-between">
+    <div class="mt-6 text-xs text-cream/55">
       <p>© {year} {site.name}. All rights reserved.</p>
-      <ul class="flex flex-wrap gap-x-6 gap-y-2">
-        {
-          legal.map((item) => (
-            <li>
-              <a href={item.href} class="transition-colors hover:text-cream">
-                {item.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
     </div>
   </div>
 </footer>

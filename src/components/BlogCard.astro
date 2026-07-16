@@ -24,7 +24,7 @@ const dateISO = pubDate.toISOString().split('T')[0];
 
 <article class="reveal group">
   <a href={href} class="block">
-    <Figure src={image} alt={imageAlt} ratio="16/10" class="transition-transform duration-500 group-hover:scale-[1.015]" />
+    <Figure src={image} alt={imageAlt} ratio="16/10" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" class="transition-transform duration-500 group-hover:scale-[1.015]" />
     {tags && tags.length ? (
       <div class="mt-4 flex flex-wrap gap-2">
         {tags.map((tag) => (
