@@ -4,7 +4,7 @@ description: "Boutique isn't about being small. It's about senior attention, one
 pubDate: 2026-07-13
 author: "Christa Machado"
 tags: ["boutique", "brand strategy", "agency life"]
-image: "/images/og-default.jpg"
+image: "/images/blog-boutique.jpg"
 imageAlt: "Christa Machado, founder of ZAMA, smiling in a refined, light-filled studio."
 draft: false
 ---
