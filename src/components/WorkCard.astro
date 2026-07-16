@@ -16,7 +16,7 @@ const { href, image, imageAlt, client, industry, title, summary } = Astro.props;
 
 <article class="reveal group">
   <a href={href} class="block">
-    <Figure src={image} alt={imageAlt} ratio="4/3" class="transition-transform duration-500 group-hover:scale-[1.015]" />
+    <Figure src={image} alt={imageAlt} ratio="4/3" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" class="transition-transform duration-500 group-hover:scale-[1.015]" />
     <div class="mt-5">
       <div class="flex items-center gap-2 text-xs uppercase tracking-label text-charcoal/50">
         <span>{client}</span>

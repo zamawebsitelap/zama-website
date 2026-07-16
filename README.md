@@ -90,14 +90,18 @@ homepage's "Selected work" section. The three example case studies use
 placeholder brands — replace them with your real projects.
 
 ### 6. Swap images
-**Folder:** `public/images/`
-All images live here as placeholder `.svg` files. To use your own photo, add it
-to this folder (a `.jpg`, `.png`, or `.webp`), then update the matching
-`image:` line in the content file to point at it — for example:
+**Folder:** `src/assets/images/`
+Drop your photo in this folder (a `.jpg`, `.png`, or `.webp`), then update the
+matching `image:` line in the content file to point at it — for example:
 
 ```yaml
 image: "/images/my-hero-photo.jpg"
 ```
+
+You don't need to resize or compress anything: every image in this folder is
+automatically resized and converted to the modern WebP format when the site
+builds. (One exception: the social-share image `public/images/og-default.jpg`
+stays where it is — that exact file is what Facebook/LinkedIn previews use.)
 
 **Always** update the `imageAlt:` line too — it describes the image for
 visually impaired visitors and helps SEO.
@@ -111,25 +115,11 @@ set `featured: false`. Testimonials show on the homepage.
 > The three that ship are **placeholders** with `[bracketed]` text — replace
 > them with real client quotes. Please don't reuse other companies' quotes.
 
-### 8. Add your photos
-Drop your image files into `public/images/` using these **exact names** and
-they'll appear automatically (recommended: JPG, roughly the ratio shown):
-
-| Save your photo as… | Appears on… | Best shape |
-|---------------------|-------------|-----------|
-| `hero-portrait.jpg` | Homepage hero | tall portrait (4:5) |
-| `founder-portrait.jpg` | About page | tall portrait (4:5) |
-| `contact-portrait.jpg` | Contact page | landscape (4:3) |
-| `testimonial-1.jpg` … `-3.jpg` | Testimonial headshots | square (1:1) |
-
-Each spot currently shows a grey placeholder that says exactly which filename
-to drop in. (If you'd rather keep the `.svg` names, update the matching
-`image:`/`photo:` line in the content file instead.)
-
 ### Fonts
 Headlines use **Cormorant Garamond** (an elegant serif, italic on the hero);
-body/buttons/labels use **Hanken Grotesk**. Both load from Google Fonts and are
-configured in `tailwind.config.mjs` + `src/layouts/BaseLayout.astro`.
+body/buttons/labels use **Hanken Grotesk**. Both are self-hosted (bundled with
+the site — no Google Fonts request) and configured in `tailwind.config.mjs` +
+`src/layouts/BaseLayout.astro`.
 
 ---
 
@@ -148,31 +138,25 @@ configured in `tailwind.config.mjs` + `src/layouts/BaseLayout.astro`.
 
 ---
 
-## Making the contact form send email
+## The contact form
 
-The contact form currently shows a success message but does **not** send email
-yet (there's no server). The easiest way to make it work is a free form service:
-
-1. Sign up for [Formspree](https://formspree.io) (or Basin, Getform, etc.).
-2. They give you a form URL like `https://formspree.io/f/abc123`.
-3. In `src/pages/contact.astro`, find the `<form>` tag and add:
-   `method="POST" action="https://formspree.io/f/abc123"`, then remove the
-   demo `<script>` at the bottom of that file.
+The contact form is wired to **Netlify Forms**: submissions are captured by
+Netlify (no server needed) and listed under **Forms** in the Netlify dashboard.
+To also get each submission by email, open the Netlify site → Forms →
+**Form notifications** → add an email notification.
 
 ---
 
 ## Deploying your site
 
-This site builds to plain static files (in `/dist`), so it can be hosted
-almost anywhere for free. The simplest options:
+The site is hosted on **Netlify**, which builds and deploys automatically on
+every push to `main` (settings pinned in `netlify.toml`: build `npm run build`,
+publish `dist`).
 
-- **Netlify** or **Vercel:** connect your Git repository, or drag-and-drop the
-  `dist` folder after running `npm run build`. Build command: `npm run build`,
-  publish directory: `dist`.
-- **Cloudflare Pages / GitHub Pages:** same build command and output folder.
-
-**Before you launch:** if your domain ever changes, update it in two places —
-`site` in `astro.config.mjs` and `url` in `src/config/site.ts`.
+**If your domain ever changes:** update it in two places —
+`site` in `astro.config.mjs` and `url` in `src/config/site.ts` — and add the
+new domain in the Netlify dashboard (Domain management → add domain → provision
+the free HTTPS certificate).
 
 ---
 
@@ -180,9 +164,9 @@ almost anywhere for free. The simplest options:
 
 ```
 zama-website/
-├─ public/               # images, favicon, robots.txt (served as-is)
-│  └─ images/            # ← swap your images here
+├─ public/               # favicon, robots.txt, og-default.jpg (served as-is)
 ├─ src/
+│  ├─ assets/images/     # ← swap your images here (auto-optimized at build)
 │  ├─ config/site.ts     # ← global settings (menu, socials, email)
 │  ├─ content/
 │  │  ├─ pages/          # ← page copy (headlines, paragraphs)

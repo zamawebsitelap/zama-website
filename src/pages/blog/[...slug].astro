@@ -66,7 +66,7 @@ const breadcrumbs = [
     </div>
 
     <div class="mx-auto mt-10 max-w-3xl">
-      <Figure src={d.image} alt={d.imageAlt} ratio="16/9" loading="eager" />
+      <Figure src={d.image} alt={d.imageAlt} ratio="16/9" loading="eager" fetchpriority="high" sizes="(min-width: 832px) 768px, 100vw" />
     </div>
 
     {/* Post body (from the Markdown file) */}

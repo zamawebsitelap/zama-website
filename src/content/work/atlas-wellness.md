@@ -15,7 +15,7 @@ servicesUsed:
   - "Creative Strategy"
   - "Paid Advertising"
   - "Growth Marketing"
-image: "/images/resort-pass.svg"
+image: "/images/resort-pass.jpg"
 imageAlt: "A hospitality brand launch campaign for ResortPass in the DMV market."
 order: 2
 featured: true

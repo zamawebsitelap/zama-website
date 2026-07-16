@@ -4,8 +4,8 @@ description: "Likes and impressions feel good, but they rarely pay the bills. He
 pubDate: 2026-05-02
 author: "The ZAMA Team"
 tags: ["reporting", "marketing", "measurement"]
-image: "/images/blog-measure.svg"
-imageAlt: "Clean, minimal dashboard-style graphic representing clear marketing reporting."
+image: "/images/blog-measure.jpg"
+imageAlt: "Christa Machado, founder of ZAMA, standing by a bright window with her laptop in hand."
 draft: false
 ---
 
