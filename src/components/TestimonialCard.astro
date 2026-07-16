@@ -8,10 +8,11 @@ interface Props {
   name: string;
   title: string;
   company: string;
+  website?: string;
   photo: string;
   photoAlt: string;
 }
-const { quote, name, title, company, photo, photoAlt } = Astro.props;
+const { quote, name, title, company, website, photo, photoAlt } = Astro.props;
 ---
 
 <figure class="reveal panel flex h-full flex-col justify-between p-8">
@@ -24,7 +25,18 @@ const { quote, name, title, company, photo, photoAlt } = Astro.props;
     </div>
     <div>
       <p class="text-sm font-semibold text-charcoal">{name}</p>
-      <p class="text-xs text-charcoal/60">{title}, {company}</p>
+      <p class="text-xs text-charcoal/60">
+        {title},{' '}
+        {
+          website ? (
+            <a href={website} target="_blank" rel="noopener noreferrer" class="underline decoration-gold/50 underline-offset-2 hover:text-charcoal">
+              {company}
+            </a>
+          ) : (
+            <span>{company}</span>
+          )
+        }
+      </p>
     </div>
   </figcaption>
 </figure>

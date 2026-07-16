@@ -3,7 +3,7 @@ import { defineCollection, z } from 'astro:content';
 // ===================================================================
 //  CONTENT COLLECTIONS
 //  These describe the "shape" of your editable content so Astro can
-//  validate it. You normally won't edit this file — you'll edit the
+//  validate it. You normally won't edit this file - you'll edit the
 //  content itself in the folders below:
 //
 //    src/content/pages/     -> page copy (headlines, paragraphs)   [.yml]
@@ -37,13 +37,17 @@ const work = defineCollection({
     title: z.string(), // headline for the case study
     client: z.string(),
     industry: z.string(),
+    seoTitle: z.string().optional(), // optional per-case-study SEO title
+    seoDescription: z.string().optional(), // optional per-case-study SEO description
     summary: z.string(), // short teaser shown on the Work grid
     challenge: z.string(), // "The Challenge"
     whatWeDid: z.string(), // "What We Did"
     results: z.array(z.string()), // "The Results" (bullet list)
     servicesUsed: z.array(z.string()), // "Services Used"
+    faqs: z.array(z.object({ question: z.string(), answer: z.string() })).optional(), // FAQ schema for GEO sections
     image: z.string(), // path under /public, e.g. /images/work-1.svg
     imageAlt: z.string(), // describe the image for accessibility + SEO
+    website: z.string().url().optional(), // optional client website URL
     order: z.number().default(0),
     featured: z.boolean().default(false), // show in homepage "Selected work"
     draft: z.boolean().default(false), // set true to hide while editing
@@ -58,7 +62,12 @@ const testimonials = defineCollection({
     name: z.string(), // client name
     title: z.string(), // their role, e.g. "CEO"
     company: z.string(), // their company
+<<<<<<< HEAD
+    website: z.string().url().optional(), // optional company website URL
+    photo: z.string().default('/images/testimonial-1.svg'), // headshot in /public/images
+=======
     photo: z.string().default('/images/og-default.jpg'), // headshot in src/assets/images
+>>>>>>> origin/main
     photoAlt: z.string().default('Client headshot'),
     order: z.number().default(0),
     featured: z.boolean().default(true), // show on the homepage

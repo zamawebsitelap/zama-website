@@ -1,0 +1,39 @@
+---
+// ===================================================================
+//  TERMS OF USE (placeholder)
+//  Replace the placeholder text below with your real terms.
+// ===================================================================
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Terms of Use', path: '/terms' },
+];
+---
+
+<BaseLayout
+  title="Terms of Use | ZAMA"
+  description="The terms that govern your use of the ZAMA website."
+  breadcrumbs={breadcrumbs}
+  noindex={true}
+>
+  <section class="container py-16 md:py-24">
+    <div class="mx-auto max-w-prose">
+      <h1 class="text-h1 font-semibold text-charcoal">Terms of Use</h1>
+      <div class="prose-zama mt-8 space-y-5 text-[1.05rem] leading-relaxed text-charcoal/80">
+        <p>
+          <em
+            >This is placeholder text. Replace it with your real terms of use
+            before launch - edit <code>src/pages/terms.astro</code>.</em
+          >
+        </p>
+        <p>
+          By using this website you agree to these terms. This page will describe
+          acceptable use, intellectual property, and liability. Questions? Email
+          <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

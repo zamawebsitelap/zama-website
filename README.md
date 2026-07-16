@@ -1,4 +1,4 @@
-# ZAMA — Marketing Website
+# ZAMA - Marketing Website
 
 A production-ready marketing website for **ZAMA**, a boutique digital marketing
 agency in Washington, DC. Built with [Astro](https://astro.build) and
@@ -27,7 +27,7 @@ The site reloads automatically as you edit files.
 
 ## How to edit your site
 
-Everything you'll realistically want to change lives in **plain text files** —
+Everything you'll realistically want to change lives in **plain text files** -
 no need to touch the design code. Here's where to look.
 
 ### 1. Change global settings (menu, socials, email)
@@ -37,7 +37,7 @@ and footer legal links. Each line has a short comment explaining it.
 
 ### 2. Change the words on a page
 **Folder:** `src/content/pages/`
-One file per page — just edit the text between the quotes:
+One file per page - just edit the text between the quotes:
 
 | File | Page it controls |
 |------|------------------|
@@ -79,7 +79,7 @@ draft: false        # set to true to hide it while you're still writing
 Write your post here in plain text. Use ## for section headings.
 ```
 
-The two example posts are there to show you the format — edit or delete them.
+The two example posts are there to show you the format - edit or delete them.
 
 ### 5. Add or edit a case study (Work)
 **Folder:** `src/content/work/`
@@ -87,23 +87,34 @@ Same idea as blog posts. Copy an existing file, rename it, and fill in the
 fields: `client`, `industry`, `challenge`, `whatWeDid`, `results` (a list),
 and `servicesUsed` (a list). Set `featured: true` to also show it on the
 homepage's "Selected work" section. The three example case studies use
-placeholder brands — replace them with your real projects.
+placeholder brands - replace them with your real projects.
 
 ### 6. Swap images
+<<<<<<< HEAD
+**Folder:** `public/images/`
+All images live here as placeholder `.svg` files. To use your own photo, add it
+to this folder (a `.jpg`, `.png`, or `.webp`), then update the matching
+`image:` line in the content file to point at it - for example:
+=======
 **Folder:** `src/assets/images/`
 Drop your photo in this folder (a `.jpg`, `.png`, or `.webp`), then update the
 matching `image:` line in the content file to point at it — for example:
+>>>>>>> origin/main
 
 ```yaml
 image: "/images/my-hero-photo.jpg"
 ```
 
+<<<<<<< HEAD
+**Always** update the `imageAlt:` line too - it describes the image for
+=======
 You don't need to resize or compress anything: every image in this folder is
 automatically resized and converted to the modern WebP format when the site
 builds. (One exception: the social-share image `public/images/og-default.jpg`
 stays where it is — that exact file is what Facebook/LinkedIn previews use.)
 
 **Always** update the `imageAlt:` line too — it describes the image for
+>>>>>>> origin/main
 visually impaired visitors and helps SEO.
 
 ### 7. Add or edit testimonials
@@ -112,7 +123,7 @@ One file per testimonial. Edit the `quote`, `name`, `title`, and `company`
 inside the quotes. To add another, copy a file and rename it; to hide one,
 set `featured: false`. Testimonials show on the homepage.
 
-> The three that ship are **placeholders** with `[bracketed]` text — replace
+> The three that ship are **placeholders** with `[bracketed]` text - replace
 > them with real client quotes. Please don't reuse other companies' quotes.
 
 ### Fonts
@@ -153,10 +164,20 @@ The site is hosted on **Netlify**, which builds and deploys automatically on
 every push to `main` (settings pinned in `netlify.toml`: build `npm run build`,
 publish `dist`).
 
+<<<<<<< HEAD
+- **Netlify** or **Vercel:** connect your Git repository, or drag-and-drop the
+  `dist` folder after running `npm run build`. Build command: `npm run build`,
+  publish directory: `dist`.
+- **Cloudflare Pages / GitHub Pages:** same build command and output folder.
+
+**Before you launch:** if your domain ever changes, update it in two places -
+`site` in `astro.config.mjs` and `url` in `src/config/site.ts`.
+=======
 **If your domain ever changes:** update it in two places —
 `site` in `astro.config.mjs` and `url` in `src/config/site.ts` — and add the
 new domain in the Netlify dashboard (Domain management → add domain → provision
 the free HTTPS certificate).
+>>>>>>> origin/main
 
 ---
 

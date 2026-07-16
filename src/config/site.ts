@@ -1,10 +1,10 @@
 // ===================================================================
-//  ZAMA — SITE CONFIG  (edit global settings here)
+//  ZAMA - SITE CONFIG  (edit global settings here)
 //  --------------------------------------------------------------
 //  This is your single "control panel" for site-wide settings:
 //  brand name, contact email, navigation links, social links, and
 //  legal links. Page copy (headlines, paragraphs) lives separately
-//  in src/content/pages/*.yml — see the README.
+//  in src/content/pages/*.yml - see the README.
 // ===================================================================
 
 export const site = {
@@ -26,14 +26,14 @@ export const site = {
   description:
     'ZAMA is a boutique digital marketing agency serving Washington, DC and South Florida, helping brands grow through strategy, creative, paid media, social, email, and SEO.',
 
-  // Business location — powers the LocalBusiness structured data (SEO).
+  // Business location - powers the LocalBusiness structured data (SEO).
   location: {
     city: 'Washington',
     region: 'DC',
     regionName: 'District of Columbia',
     country: 'United States',
     countryCode: 'US',
-    // Where you serve clients — shown to search & AI answer engines.
+    // Where you serve clients - shown to search & AI answer engines.
     areaServed: ['Washington, DC', 'South Florida', 'United States'],
   },
 
@@ -43,7 +43,7 @@ export const site = {
 };
 
 // -------------------------------------------------------------------
-//  Main navigation — add, remove, or reorder links here.
+//  Main navigation - add, remove, or reorder links here.
 // -------------------------------------------------------------------
 export const nav = [
   { label: 'Services', href: '/services' },
@@ -54,7 +54,7 @@ export const nav = [
 ];
 
 // -------------------------------------------------------------------
-//  Social links — replace the URLs with your real profiles.
+//  Social links - replace the URLs with your real profiles.
 // -------------------------------------------------------------------
 export const socials = [
   { label: 'Instagram', href: 'https://www.instagram.com/wearezama.co/' },

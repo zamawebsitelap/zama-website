@@ -1,13 +1,20 @@
+<<<<<<< HEAD
+=======
 # ===================================================================
 #  Netlify configuration
 #  Pins the build settings in the repo (instead of only in the
 #  Netlify UI) and sets caching/security headers.
 # ===================================================================
 
+>>>>>>> origin/main
 [build]
   command = "npm run build"
   publish = "dist"
 
+<<<<<<< HEAD
+[build.environment]
+  NODE_VERSION = "20"
+=======
 # Hashed build assets (/_astro/*) change filename when content changes,
 # so they can be cached forever.
 [[headers]]
@@ -21,3 +28,4 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
+>>>>>>> origin/main

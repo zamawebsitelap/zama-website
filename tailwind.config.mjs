@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 // -------------------------------------------------------------------
-//  ZAMA — Tailwind theme tokens
+//  ZAMA - Tailwind theme tokens
 //  The brand palette and fonts are defined here so they can be used
 //  as utility classes (e.g. bg-cream, text-terracotta, font-serif).
 //  These mirror the CSS variables in src/styles/global.css.
@@ -26,10 +26,10 @@ export default {
         concrete: '#D8D1C4', // slightly deeper structural tone / borders
       },
       fontFamily: {
-        // Headlines / display ONLY (large sizes) — elegant high-contrast serif.
+        // Headlines / display ONLY (large sizes) - elegant high-contrast serif.
         // Use its italic for hero lines and emphasis.
         serif: ['"Cormorant Garamond"', 'ui-serif', 'Georgia', 'Cambria', 'serif'],
-        // Body, UI, buttons, labels — everything small uses this grotesk.
+        // Body, UI, buttons, labels - everything small uses this grotesk.
         sans: ['"Hanken Grotesk"', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
       },
       // Comfortable editorial type scale
