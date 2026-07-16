@@ -10,6 +10,7 @@ const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'Terms of Use', path: '/terms' },
 ];
+const emailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}`;
 ---
 
 <BaseLayout
@@ -31,7 +32,7 @@ const breadcrumbs = [
         <p>
           By using this website you agree to these terms. This page will describe
           acceptable use, intellectual property, and liability. Questions? Email
-          <a href={`mailto:${site.email}`}>{site.email}</a>.
+          <a href={emailHref} target="_blank" rel="noopener noreferrer">{site.email}</a>.
         </p>
       </div>
     </div>

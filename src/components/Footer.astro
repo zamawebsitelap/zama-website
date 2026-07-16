@@ -7,6 +7,7 @@
 import { site, nav, socials } from '../config/site';
 
 const year = new Date().getFullYear();
+const emailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}`;
 ---
 
 <footer class="bg-ink text-cream/80">
@@ -19,7 +20,9 @@ const year = new Date().getFullYear();
           {site.tagline} A boutique digital marketing agency in {site.location.city}, {site.location.region}.
         </p>
         <a
-          href={`mailto:${site.email}`}
+          href={emailHref}
+          target="_blank"
+          rel="noopener noreferrer"
           class="mt-6 inline-block text-sm text-cream underline decoration-gold/60 underline-offset-4 transition-colors hover:text-gold"
         >
           {site.email}

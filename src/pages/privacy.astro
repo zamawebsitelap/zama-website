@@ -11,6 +11,7 @@ const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'Privacy Policy', path: '/privacy' },
 ];
+const emailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}`;
 ---
 
 <BaseLayout
@@ -33,7 +34,7 @@ const breadcrumbs = [
           ZAMA respects your privacy. This page will describe what information we
           collect, how we use it, and the choices you have. If you have any
           questions, contact us at
-          <a href={`mailto:${site.email}`}>{site.email}</a>.
+          <a href={emailHref} target="_blank" rel="noopener noreferrer">{site.email}</a>.
         </p>
       </div>
     </div>

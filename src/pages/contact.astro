@@ -24,6 +24,7 @@ const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'Contact', path: '/contact' },
 ];
+const emailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}`;
 ---
 
 <BaseLayout title={c.seo.title} description={c.seo.description} breadcrumbs={breadcrumbs}>
@@ -39,7 +40,9 @@ const breadcrumbs = [
           <p class="text-charcoal/80">
             {c.altContactText}{' '}
             <a
-              href={`mailto:${site.email}`}
+              href={emailHref}
+              target="_blank"
+              rel="noopener noreferrer"
               class="font-medium text-terracotta underline decoration-gold/50 underline-offset-4 hover:text-terracotta-deep"
             >
               {site.email}
