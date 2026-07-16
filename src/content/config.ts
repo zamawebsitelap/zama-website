@@ -37,11 +37,14 @@ const work = defineCollection({
     title: z.string(), // headline for the case study
     client: z.string(),
     industry: z.string(),
+    seoTitle: z.string().optional(), // optional per-case-study SEO title
+    seoDescription: z.string().optional(), // optional per-case-study SEO description
     summary: z.string(), // short teaser shown on the Work grid
     challenge: z.string(), // "The Challenge"
     whatWeDid: z.string(), // "What We Did"
     results: z.array(z.string()), // "The Results" (bullet list)
     servicesUsed: z.array(z.string()), // "Services Used"
+    faqs: z.array(z.object({ question: z.string(), answer: z.string() })).optional(), // FAQ schema for GEO sections
     image: z.string(), // path under /public, e.g. /images/work-1.svg
     imageAlt: z.string(), // describe the image for accessibility + SEO
     website: z.string().url().optional(), // optional client website URL

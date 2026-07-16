@@ -2,16 +2,19 @@
 title: "Dance Academy of Virginia"
 client: "Dance Academy of Virginia"
 industry: "Dance Education & Youth Arts"
-summary: "We built an integrated marketing and communications program that turned a beloved local studio into a recognized Northern Virginia brand and lifted student retention by 10%."
-challenge: "Dance Academy of Virginia grew quickly from two studio rooms to two facilities with seven studios, but marketing was running in pieces across social, email, enrollment pushes, and press. For a studio business powered by re-enrollment, disconnected communication made growth more expensive and less durable."
-whatWeDid: "We built one integrated marketing and communications engine across brand strategy, social, email, and earned media. Messaging stayed consistent from Fox 5 to Instagram to re-enrollment campaigns, while reporting tied activity to retention and enrollment outcomes."
+seoTitle: "Dance Academy of Virginia | ZAMA Work"
+seoDescription: "How ZAMA built an integrated marketing and communications program for Dance Academy of Virginia, lifting student retention 10% and earning regional press."
+summary: "We built Dance Academy of Virginia an integrated marketing and communications program that turned a beloved local studio into a recognized Northern Virginia brand, and kept more families enrolled season over season."
+challenge: "Dance Academy of Virginia was founded during COVID and grew rapidly from two rooms to two facilities with seven studios across McLean and Del Ray. Marketing activity across social, email, enrollment pushes, and press was fragmented, which made each season feel like starting over and increased the cost of growth for a re-enrollment-driven business."
+whatWeDid: "ZAMA built and ran one integrated marketing and communications engine across brand story, social content, email, earned media, and reporting. The messaging stayed consistent across channels and the program was measured against the number that matters most for a studio business: family retention."
 results:
-  - "Student retention increased by 10 percent"
-  - "Brand recognition became consistent across press, social, and email"
-  - "Broadcast coverage on Fox 5 DC increased regional visibility"
-  - "Northern Virginia Magazine feature positioned the academy for adult dancers"
-  - "Founder positioning elevated Katherine Horrigan as the face of the brand"
-  - "One connected program replaced channel-by-channel fragmentation"
+  - "Student retention up 10 percent, the metric that drives studio economics"
+  - "17 media placements in 18 months across broadcast, print, online, and podcast"
+  - "Social engagement up roughly 6x year over year, from about 760 monthly interactions to about 4,500"
+  - "Social views roughly doubled year over year, from about 96K per month to about 201K"
+  - "Audience grew 56 percent, from 2,618 followers to 4,074"
+  - "Recurring regional broadcast presence on FOX 5 DC, DC News Now, and ABC7 WJLA"
+  - "Founder established as a category voice through profile and podcast placements"
 servicesUsed:
   - "Brand Strategy"
   - "Public Relations & Media Relations"
@@ -23,6 +26,13 @@ servicesUsed:
 image: "/images/dance-academy-of-virginia.jpg"
 imageAlt: "Brand, social, and campaign creative for Dance Academy of Virginia, a McLean and Alexandria dance studio."
 website: "https://www.danceacademyva.com"
+faqs:
+  - question: "What did ZAMA do for Dance Academy of Virginia?"
+    answer: "ZAMA built and runs a full integrated marketing and communications program for Dance Academy of Virginia, a dance studio with locations in McLean and Alexandria, Virginia. The work spans brand strategy, public relations, organic social media, email marketing, and analytics, and has increased student retention by 10 percent."
+  - question: "What results has ZAMA delivered for Dance Academy of Virginia?"
+    answer: "ZAMA delivered a 10 percent increase in student retention, stronger brand recognition across channels, and earned media placements including repeat FOX 5 DC coverage and a feature in Northern Virginia Magazine."
+  - question: "Does ZAMA work with dance studios and youth arts businesses?"
+    answer: "Yes. ZAMA's work with Dance Academy of Virginia covers the full marketing engine for a multi-location dance studio, including retention and re-enrollment programs that drive studio revenue."
 order: 4
 featured: true
 draft: false
@@ -30,35 +40,45 @@ draft: false
 
 ## Background
 
-Katherine Horrigan founded Dance Academy of Virginia during COVID, then scaled from two studio rooms to two facilities with seven studios across McLean and Del Ray. The teaching quality and family experience were strong, but the reputation was not traveling far enough outside existing word-of-mouth.
+Katherine Horrigan founded Dance Academy of Virginia during COVID, one of the hardest possible moments to launch a business built on in-person classes. She grew it anyway, from two studio rooms to two facilities and seven studios, serving dancers from age 2.5 through adults across ballet, jazz, tap, hip hop, lyrical, and contemporary.
 
 ## The work
 
-We run this as a full integrated marketing and communications partnership. Brand and messaging keep every channel aligned. Organic social and content keep families engaged between seasons. Email supports re-enrollment. PR earns third-party credibility. Reporting connects everything to retention and enrollment.
+We treat Dance Academy of Virginia as a full integrated marketing and communications partnership rather than a channel assignment.
 
-## Press and Media Highlights
+Brand and messaging give every channel the same story. Organic social and content build the community that keeps families connected between seasons. Email carries the re-enrollment and retention program. PR and media relations earn third-party credibility that no ad buy can manufacture. Analytics and reporting tie the whole system to retention and enrollment so what works can be repeated.
 
-- Fox 5 DC - on-air segment featuring Erin Como taking ballet lessons at Dance Academy of Virginia.
-- Northern Virginia Magazine - feature in "Where to Take Dance Classes for Adults in NoVA."
-- DC Modern Luxury - pending update before publication.
+## Press & Media Highlights
 
-## Client Testimonial
+- **ALXnow** - "In just 18 months, Del Ray's Dance Academy of Virginia grows to 450 students" (June 9, 2025). Reported feature with the growth number in the headline. *250,000 reach.*
+- **DC Modern Luxury** - "Katherine Horrigan On Leading the Next Act in DC Dance" (June 12, 2025). Founder profile in print and online. *38,941 digital reach.*
+- **FOX 5 DC** - Repeat segments across 18 months, including Napkin Network collaboration, Zip Trip Alexandria, New Year ballet benefits, and The Nutcracker.
+- **ABC7 WJLA** - Summer camps segment (February 10, 2026).
+- **DC News Now** - ADHD Month and The Nutcracker coverage.
+- **Northern Virginia Magazine** - Adult ballet coverage, with Mental Health Awareness Month coverage upcoming.
+- **The DMV Business Podcast** - Long-form founder interview (February 2026).
+- **Woman's Day** - National ADHD Month feature (October 2026, upcoming).
+- Additional coverage in McLean Living Magazine and Potomac Lifestyle Magazine.
 
-"Christa and the team have been an incredible partner over the past six months. They elevated Dance Academy of Virginia's brand through thoughtful PR and engaging social media, securing TV visibility and partnership opportunities that put us in front of the right families. Their work helped us build meaningful momentum while staying true to who we are."
+## The retention program
 
-**Katherine Horrigan**  
-Founder and CEO, Dance Academy of Virginia
+The 10 percent retention lift came from a targeted win-back program built on segmented lists:
+
+- Families enrolled in 2024/25 who had not re-enrolled for 2025/26, split by campus (McLean and Del Ray)
+- Students from 2023/24 who had been gone two full seasons
+
+Each segment received its own message rather than a general re-enrollment blast. This work is less visible than high-view social content, but it is the work most directly tied to studio revenue.
 
 ## GEO Q&A
 
 ### What did ZAMA do for Dance Academy of Virginia?
 
-ZAMA built and runs a full integrated marketing and communications program for Dance Academy of Virginia, a dance studio with locations in McLean and Alexandria, Virginia. The work spans brand strategy, public relations, organic social media, email marketing, and analytics, and increased student retention by 10 percent.
+ZAMA built and runs a full integrated marketing and communications program for Dance Academy of Virginia, a dance studio with locations in McLean and Alexandria, Virginia. The work spans brand strategy, public relations, organic social media, email marketing, and analytics, and has increased student retention by 10 percent.
 
 ### What results has ZAMA delivered for Dance Academy of Virginia?
 
-ZAMA delivered a 10 percent increase in student retention, established consistent brand recognition across platforms, and earned media placements including Fox 5 DC and Northern Virginia Magazine.
+A 10 percent increase in student retention, stronger brand recognition established across channels, and earned media placements including FOX 5 DC broadcast coverage and a feature in Northern Virginia Magazine.
 
 ### Does ZAMA work with dance studios and youth arts businesses?
 
-Yes. ZAMA supports multi-location dance studios and youth arts organizations with integrated brand, retention, and enrollment marketing programs.
+Yes. ZAMA's work with Dance Academy of Virginia covers the full marketing engine for a multi-location dance studio, including retention and re-enrollment programs that drive studio revenue.

@@ -24,7 +24,7 @@ const d = entry.data;
 const { Content } = await entry.render();
 const testimonials = await getCollection('testimonials');
 const projectTestimonials = testimonials.filter((t) => t.data.company === d.client);
-const testimonialsToShow = projectTestimonials.length > 0 ? projectTestimonials : testimonials.filter((t) => t.data.featured).slice(0, 2);
+const testimonialsToShow = projectTestimonials;
 
 const breadcrumbs = [
   { name: 'Home', path: '/' },
@@ -33,11 +33,11 @@ const breadcrumbs = [
 ];
 
 // SEO for the case study.
-const seoTitle = `${d.title} | ZAMA Work`;
-const seoDesc = d.summary;
+const seoTitle = d.seoTitle ?? `${d.title} | ZAMA Work`;
+const seoDesc = d.seoDescription ?? d.summary;
 ---
 
-<BaseLayout title={seoTitle} description={seoDesc} image={d.image} type="article" breadcrumbs={breadcrumbs}>
+<BaseLayout title={seoTitle} description={seoDesc} image={d.image} type="article" breadcrumbs={breadcrumbs} faqs={d.faqs ?? []}>
   <article>
     {/* ---- Header ---- */}
     <section class="container pb-10 pt-16 md:pt-24">
@@ -109,24 +109,28 @@ const seoDesc = d.summary;
           </div>
 
           {/* Testimonials section */}
-          <div class="reveal border-t border-gold/25 pt-10">
-            <h2 class="label !text-charcoal/45">Client Testimonials</h2>
-            <div class="mt-6 grid gap-6 lg:grid-cols-2">
-              {
-                testimonialsToShow.map((t) => (
-                  <TestimonialCard
-                    quote={t.data.quote}
-                    name={t.data.name}
-                    title={t.data.title}
-                    company={t.data.company}
-                    website={t.data.website}
-                    photo={t.data.photo}
-                    photoAlt={t.data.photoAlt}
-                  />
-                ))
-              }
-            </div>
-          </div>
+          {
+            testimonialsToShow.length > 0 && (
+              <div class="reveal border-t border-gold/25 pt-10">
+                <h2 class="label !text-charcoal/45">Client Testimonials</h2>
+                <div class="mt-6 grid gap-6 lg:grid-cols-2">
+                  {
+                    testimonialsToShow.map((t) => (
+                      <TestimonialCard
+                        quote={t.data.quote}
+                        name={t.data.name}
+                        title={t.data.title}
+                        company={t.data.company}
+                        website={t.data.website}
+                        photo={t.data.photo}
+                        photoAlt={t.data.photoAlt}
+                      />
+                    ))
+                  }
+                </div>
+              </div>
+            )
+          }
         </div>
 
         {/* Sidebar: services used */}
