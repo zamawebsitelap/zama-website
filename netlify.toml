@@ -18,3 +18,6 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    # Tells browsers to always use HTTPS for this domain (1 year).
+    # Added only after the Let's Encrypt cert was verified live.
+    Strict-Transport-Security = "max-age=31536000"
