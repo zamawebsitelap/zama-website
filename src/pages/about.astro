@@ -16,7 +16,12 @@ const breadcrumbs = [
 ];
 ---
 
-<BaseLayout title={c.seo.title} description={c.seo.description} breadcrumbs={breadcrumbs}>
+<BaseLayout
+  title={c.seo.title}
+  description={c.seo.description}
+  keywords={c.seo.keywords}
+  breadcrumbs={breadcrumbs}
+>
   {/* ---- Intro ---- */}
   <section class="container pb-8 pt-16 md:pt-24">
     <div class="max-w-3xl">

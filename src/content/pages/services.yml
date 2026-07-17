@@ -5,8 +5,15 @@
 # =====================================================================
 
 seo:
-  title: "Digital Marketing Services | ZAMA"
+  title: "Digital Marketing Services in Washington, DC | ZAMA"
   description: "Explore ZAMA's digital marketing services: brand strategy, paid ads, social media, email, SEO, analytics, and growth marketing for brands ready to scale."
+  keywords:
+    - "digital marketing services"
+    - "brand strategy services"
+    - "paid ads agency"
+    - "social media services"
+    - "SEO agency Washington DC"
+    - "email marketing services"
 
 label: "WHAT WE DO"
 h1: "Digital marketing services that work as one."

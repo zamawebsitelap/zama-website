@@ -43,7 +43,7 @@ const testimonials = (await getCollection('testimonials', ({ data }) => data.fea
 );
 ---
 
-<BaseLayout title={c.seo.title} description={c.seo.description} faqs={faqs}>
+<BaseLayout title={c.seo.title} description={c.seo.description} keywords={c.seo.keywords} faqs={faqs}>
   {/* ===================== HERO ===================== */}
   <section class="relative overflow-hidden">
     <div class="container grid items-center gap-12 pb-16 pt-16 md:grid-cols-2 md:gap-16 md:pb-24 md:pt-24">

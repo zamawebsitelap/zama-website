@@ -43,6 +43,7 @@ interface Article {
 interface Props {
   title: string;
   description: string;
+  keywords?: string[];
   image?: string;
   imageAlt?: string;
   type?: 'website' | 'article';
@@ -56,6 +57,7 @@ interface Props {
 const {
   title,
   description,
+  keywords,
   image,
   imageAlt,
   type = 'website',
@@ -83,6 +85,7 @@ const {
     <SEO
       title={title}
       description={description}
+      keywords={keywords}
       image={image}
       imageAlt={imageAlt}
       type={type}

@@ -27,7 +27,12 @@ const breadcrumbs = [
 const emailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}`;
 ---
 
-<BaseLayout title={c.seo.title} description={c.seo.description} breadcrumbs={breadcrumbs}>
+<BaseLayout
+  title={c.seo.title}
+  description={c.seo.description}
+  keywords={c.seo.keywords}
+  breadcrumbs={breadcrumbs}
+>
   <section class="container py-16 md:py-24">
     <div class="grid gap-14 md:grid-cols-[1fr_1.1fr] md:gap-20">
       {/* ---- Left: intro + alternate contact ---- */}

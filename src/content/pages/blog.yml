@@ -4,8 +4,14 @@
 # =====================================================================
 
 seo:
-  title: "Insights & Ideas | ZAMA Blog"
-  description: "Practical thinking on brand, content, and growth from the ZAMA team - a boutique digital marketing agency in Washington, DC."
+  title: "Marketing Insights & Blog | ZAMA"
+  description: "Read practical insights on brand, content, SEO, and growth marketing from the ZAMA team in Washington, DC."
+  keywords:
+    - "digital marketing blog"
+    - "SEO insights"
+    - "content marketing tips"
+    - "growth marketing ideas"
+    - "brand strategy articles"
 
 label: "INSIGHTS"
 h1: "Ideas worth your inbox."
