@@ -37,11 +37,14 @@ const work = defineCollection({
     title: z.string(), // headline for the case study
     client: z.string(),
     industry: z.string(),
+    seoTitle: z.string().optional(), // optional per-case-study SEO title
+    seoDescription: z.string().optional(), // optional per-case-study SEO description
     summary: z.string(), // short teaser shown on the Work grid
     challenge: z.string(), // "The Challenge"
     whatWeDid: z.string(), // "What We Did"
     results: z.array(z.string()), // "The Results" (bullet list)
     servicesUsed: z.array(z.string()), // "Services Used"
+    faqs: z.array(z.object({ question: z.string(), answer: z.string() })).optional(), // FAQ schema for GEO sections
     image: z.string(), // path under /public, e.g. /images/work-1.svg
     imageAlt: z.string(), // describe the image for accessibility + SEO
     website: z.string().url().optional(), // optional client website URL
@@ -60,7 +63,7 @@ const testimonials = defineCollection({
     title: z.string(), // their role, e.g. "CEO"
     company: z.string(), // their company
     website: z.string().url().optional(), // optional company website URL
-    photo: z.string().default('/images/testimonial-1.svg'), // headshot in /public/images
+    photo: z.string().default('/images/og-default.jpg'), // headshot in /public/images
     photoAlt: z.string().default('Client headshot'),
     order: z.number().default(0),
     featured: z.boolean().default(true), // show on the homepage
@@ -75,7 +78,7 @@ const blog = defineCollection({
     description: z.string(), // used for previews + SEO meta description
     pubDate: z.date(), // e.g. 2026-01-15
     author: z.string().default('The ZAMA Team'),
-    image: z.string().default('/images/blog-default.svg'),
+    image: z.string().default('/images/og-default.jpg'),
     imageAlt: z.string().default('ZAMA insights'),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false), // set true to hide while editing

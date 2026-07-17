@@ -4,8 +4,8 @@ description: "Likes and impressions feel good, but they rarely pay the bills. He
 pubDate: 2026-05-02
 author: "The ZAMA Team"
 tags: ["reporting", "marketing", "measurement"]
-image: "/images/blog-measure.svg"
-imageAlt: "Clean, minimal dashboard-style graphic representing clear marketing reporting."
+image: "/images/blog-post-1.png"
+imageAlt: "Team collaborating at a desk with laptops and coffee."
 draft: false
 ---
 

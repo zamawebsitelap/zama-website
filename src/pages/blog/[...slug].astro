@@ -38,8 +38,17 @@ const breadcrumbs = [
   description={d.description}
   keywords={d.tags}
   image={d.image}
+  imageAlt={d.imageAlt}
   type="article"
   breadcrumbs={breadcrumbs}
+  article={{
+    title: d.title,
+    description: d.description,
+    pubDate: d.pubDate,
+    author: d.author,
+    image: d.image,
+    imageAlt: d.imageAlt,
+  }}
 >
   <article class="container py-16 md:py-24">
     <div class="mx-auto max-w-2xl">
@@ -67,7 +76,7 @@ const breadcrumbs = [
     </div>
 
     <div class="mx-auto mt-10 max-w-3xl">
-      <Figure src={d.image} alt={d.imageAlt} ratio="16/9" loading="eager" />
+      <Figure src={d.image} alt={d.imageAlt} ratio="16/9" loading="eager" fetchpriority="high" sizes="(min-width: 832px) 768px, 100vw" />
     </div>
 
     {/* Post body (from the Markdown file) */}

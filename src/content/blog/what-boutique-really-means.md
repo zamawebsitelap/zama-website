@@ -4,8 +4,8 @@ description: "Boutique isn't about being small. It's about senior attention, one
 pubDate: 2026-07-13
 author: "Christa Machado"
 tags: ["boutique", "brand strategy", "agency life"]
-image: "/images/blog-boutique.svg"
-imageAlt: "Detail of refined, hand-crafted materials representing boutique quality."
+image: "/images/blog-post-2.png"
+imageAlt: "Digital email icon above hands typing on a keyboard."
 draft: false
 ---
 

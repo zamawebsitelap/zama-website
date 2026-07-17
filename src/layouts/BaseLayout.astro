@@ -6,6 +6,22 @@
 //  Footer. You rarely need to edit this file.
 // ===================================================================
 import '../styles/global.css';
+
+// --- Self-hosted fonts (no render-blocking third-party requests) ---
+// Cormorant Garamond: headlines/display, incl. italics for the hero.
+import '@fontsource/cormorant-garamond/400.css';
+import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/cormorant-garamond/600.css';
+import '@fontsource/cormorant-garamond/700.css';
+import '@fontsource/cormorant-garamond/400-italic.css';
+import '@fontsource/cormorant-garamond/500-italic.css';
+import '@fontsource/cormorant-garamond/600-italic.css';
+// Hanken Grotesk: body, UI, buttons, labels.
+import '@fontsource/hanken-grotesk/400.css';
+import '@fontsource/hanken-grotesk/500.css';
+import '@fontsource/hanken-grotesk/600.css';
+import '@fontsource/hanken-grotesk/700.css';
+
 import SEO from '../components/SEO.astro';
 import StructuredData from '../components/StructuredData.astro';
 import Header from '../components/Header.astro';
@@ -15,15 +31,27 @@ import { site } from '../config/site';
 interface Crumb { name: string; path: string; }
 interface Faq { question: string; answer: string; }
 
+interface Article {
+  title: string;
+  description: string;
+  pubDate: Date;
+  author: string;
+  image?: string;
+  imageAlt?: string;
+}
+
 interface Props {
   title: string;
   description: string;
   keywords?: string[];
   image?: string;
+  imageAlt?: string;
   type?: 'website' | 'article';
   noindex?: boolean;
   breadcrumbs?: Crumb[];
   faqs?: Faq[];
+  /** Pass on blog posts: adds BlogPosting schema + article meta tags. */
+  article?: Article;
 }
 
 const {
@@ -31,10 +59,12 @@ const {
   description,
   keywords,
   image,
+  imageAlt,
   type = 'website',
   noindex = false,
   breadcrumbs = [],
   faqs = [],
+  article,
 } = Astro.props;
 ---
 
@@ -48,19 +78,8 @@ const {
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#FBF8F3" />
 
-    {/* --- Google Fonts: Cormorant Garamond (display, incl. italics) +
-           Hanken Grotesk (body/UI), preloaded --- */}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
-    />
+    {/* RSS autodiscovery (browsers, readers & crawlers find the feed) */}
+    <link rel="alternate" type="application/rss+xml" title={`${site.name} — Insights`} href="/rss.xml" />
 
     {/* SEO meta + social cards */}
     <SEO
@@ -68,12 +87,29 @@ const {
       description={description}
       keywords={keywords}
       image={image}
+      imageAlt={imageAlt}
       type={type}
       noindex={noindex}
+      publishedTime={article?.pubDate}
     />
 
-    {/* Structured data (Organization, WebSite, ProfessionalService/LocalBusiness, + optional Breadcrumbs & FAQ) */}
-    <StructuredData breadcrumbs={breadcrumbs} faqs={faqs} />
+    {/* Structured data (Organization, WebSite, ProfessionalService/LocalBusiness, + optional Breadcrumbs, FAQ & BlogPosting) */}
+    <StructuredData breadcrumbs={breadcrumbs} faqs={faqs} article={article} />
+
+    {/* Google Analytics (GA4) — only in production builds */}
+    {
+      import.meta.env.PROD && (
+        <>
+          <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-8L0SZWFS3J"></script>
+          <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8L0SZWFS3J');
+          </script>
+        </>
+      )
+    }
   </head>
 
   <body>

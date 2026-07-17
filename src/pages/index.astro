@@ -59,7 +59,7 @@ const testimonials = (await getCollection('testimonials', ({ data }) => data.fea
       </div>
       {/* Hero image is above the fold -> load eagerly to avoid a flash */}
       <div class="reveal is-visible">
-        <Figure src={c.hero.image} alt={c.hero.imageAlt} ratio="4/5" loading="eager" />
+        <Figure src={c.hero.image} alt={c.hero.imageAlt} ratio="4/5" loading="eager" fetchpriority="high" />
       </div>
     </div>
     <hr class="rule-gold container" />
@@ -218,4 +218,3 @@ const testimonials = (await getCollection('testimonials', ({ data }) => data.fea
     variant="terracotta"
   />
 </BaseLayout>
-can i make changes ?

@@ -47,8 +47,9 @@ export const site = {
     areaServed: ['Washington, DC', 'South Florida', 'United States'],
   },
 
-  // Default social-share image. Swap the file in /public/images/.
-  defaultOgImage: '/images/og-default.svg',
+  // Default social-share image (1200×630 JPG — social scrapers don't
+  // render SVGs). Swap the file in /public/images/.
+  defaultOgImage: '/images/og-default.jpg',
 };
 
 // -------------------------------------------------------------------
@@ -72,12 +73,4 @@ export const socials = [
     label: 'LinkedIn',
     href: 'https://linkedin.com/company/zama-digital-marketing/?viewAsMember=true',
   },
-];
-
-// -------------------------------------------------------------------
-//  Footer legal links.
-// -------------------------------------------------------------------
-export const legal = [
-  { label: 'Privacy Policy', href: '/privacy' },
-  { label: 'Terms of Use', href: '/terms' },
 ];

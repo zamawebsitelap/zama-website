@@ -8,7 +8,9 @@
 //  You normally won't edit this - the values come from
 //  src/config/site.ts and your content files.
 // ===================================================================
+import { getImage } from 'astro:assets';
 import { site, socials } from '../config/site';
+import { resolveAsset } from '../lib/images';
 
 interface Crumb {
   name: string;
@@ -18,13 +20,22 @@ interface Faq {
   question: string;
   answer: string;
 }
+interface Article {
+  title: string;
+  description: string;
+  pubDate: Date;
+  author: string;
+  image?: string;
+  imageAlt?: string;
+}
 
 interface Props {
   breadcrumbs?: Crumb[];
   faqs?: Faq[];
+  article?: Article;
 }
 
-const { breadcrumbs = [], faqs = [] } = Astro.props;
+const { breadcrumbs = [], faqs = [], article } = Astro.props;
 
 const orgId = `${site.url}/#organization`;
 const websiteId = `${site.url}/#website`;
@@ -38,7 +49,8 @@ const graph: Record<string, unknown>[] = [
     url: site.url,
     email: site.email,
     description: site.description,
-    logo: new URL('/images/logo-mark.svg', site.url).href,
+    logo: new URL(site.defaultOgImage, site.url).href,
+    founder: { '@type': 'Person', name: 'Christa Machado' },
     sameAs: socials.map((s) => s.href),
   },
   {
@@ -82,6 +94,23 @@ if (breadcrumbs.length > 0) {
       name: c.name,
       item: new URL(c.path, site.url).href,
     })),
+  });
+}
+
+// --- Blog post (per page) ---
+if (article) {
+  const asset = article.image ? resolveAsset(article.image) : undefined;
+  const img = asset ? await getImage({ src: asset, width: 1200, format: 'jpeg' }) : null;
+  graph.push({
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.description,
+    datePublished: article.pubDate.toISOString(),
+    author: { '@type': 'Person', name: article.author },
+    publisher: { '@id': orgId },
+    mainEntityOfPage: new URL(Astro.url.pathname, site.url).href,
+    inLanguage: 'en-US',
+    ...(img ? { image: new URL(img.src, site.url).href } : {}),
   });
 }
 
