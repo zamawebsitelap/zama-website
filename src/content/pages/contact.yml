@@ -49,7 +49,7 @@ form:
       type: "textarea"
       required: true
   submitLabel: "Send message"
-  # Shown after a successful (demo) submit. This form is front-end only —
+  # Shown after a successful (demo) submit. This form is front-end only -
   # see the README to connect it to a real form service (e.g. Formspree).
   successMessage: "Thanks - your message is on its way. We'll reply within one business day."
 

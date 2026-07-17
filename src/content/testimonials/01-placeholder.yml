@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------
-#  TESTIMONIAL — replace this placeholder with a REAL client quote.
+#  TESTIMONIAL - replace this placeholder with a REAL client quote.
 #  Only edit the text inside the quotes. To add more, copy this file
 #  and rename it (e.g. 04-jane-doe.yml). To hide one, set featured: false.
 # ---------------------------------------------------------------------
@@ -7,6 +7,7 @@ quote: "Christa and the team have elevated our brand to where it belongs, day af
 name: "Thierry Pigeot"
 title: "CEO"
 company: "Premium Kitchens"
+website: "https://www.premiumkitchens.com"
 photo: "/images/premium-kitchens.jpg"
 photoAlt: "Premium Kitchens project photo used for Thierry Pigeot."
 order: 1

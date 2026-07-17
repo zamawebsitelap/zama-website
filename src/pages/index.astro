@@ -110,6 +110,7 @@ const testimonials = (await getCollection('testimonials', ({ data }) => data.fea
             image={w.data.image}
             imageAlt={w.data.imageAlt}
             client={w.data.client}
+            website={w.data.website}
             industry={w.data.industry}
             title={w.data.title}
             summary={w.data.summary}
@@ -162,6 +163,7 @@ const testimonials = (await getCollection('testimonials', ({ data }) => data.fea
             name={t.data.name}
             title={t.data.title}
             company={t.data.company}
+            website={t.data.website}
             photo={t.data.photo}
             photoAlt={t.data.photoAlt}
           />

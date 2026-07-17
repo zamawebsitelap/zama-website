@@ -1,9 +1,10 @@
-# TESTIMONIAL — replace this placeholder with a REAL client quote.
-quote: "Christa and the team have done a remarkable job helping us get our name and message out to the public. They have been integral in helping us increase membership and bring our communications up to date."
+# TESTIMONIAL - replace this placeholder with a REAL client quote.
+quote: "Christa and the team did an awesome job helping us break into the Washington, DC market for our spa business. Christa and the team were incredibly scrappy and found opportunities to secure earned media attention and partnerships that put us in front of the right prospective guests. As a result, we saw a dramatic year-over-year increase in growth in the DC market, and engagement surpassed our expectations."
 name: "Nicole Maddern"
-title: "Member"
-company: "ResortPass National"
-photo: "/images/nicole-maddern.avif"
+title: "VP of Marketing"
+company: "ResortPass"
+website: "https://www.resortpass.com"
+photo: "/images/nicole-maddern.jpg"
 photoAlt: "Photo of Nicole Maddern."
 order: 2
 featured: true

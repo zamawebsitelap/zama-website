@@ -17,6 +17,7 @@ servicesUsed:
   - "Growth Marketing"
 image: "/images/resort-pass.svg"
 imageAlt: "A hospitality brand launch campaign for ResortPass in the DMV market."
+website: "https://www.resortpass.com"
 order: 2
 featured: true
 draft: false

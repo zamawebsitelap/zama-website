@@ -26,7 +26,12 @@ const breadcrumbs = [
 ];
 ---
 
-<BaseLayout title={c.seo.title} description={c.seo.description} breadcrumbs={breadcrumbs}>
+<BaseLayout
+  title={c.seo.title}
+  description={c.seo.description}
+  keywords={c.seo.keywords}
+  breadcrumbs={breadcrumbs}
+>
   <section class="container py-16 md:py-24">
     <div class="grid gap-14 md:grid-cols-[1fr_1.1fr] md:gap-20">
       {/* ---- Left: intro + alternate contact ---- */}
@@ -68,7 +73,7 @@ const breadcrumbs = [
           </ul>
         </div>
 
-        {/* Photo (swap in /public/images/ — see contact.yml) */}
+        {/* Photo (swap in /public/images/ - see contact.yml) */}
         <div class="mt-10 hidden md:block">
           <Figure src={c.image} alt={c.imageAlt} ratio="9/16" />
         </div>
@@ -107,37 +112,8 @@ const breadcrumbs = [
           }
 
           <button type="submit" class="btn-primary w-full">{c.form.submitLabel}</button>
-
-          {/* Success message (revealed by the script on submit) */}
-          <p
-            id="form-success"
-            role="status"
-            class="hidden rounded-xl bg-terracotta/10 px-4 py-3 text-sm text-terracotta-deep"
-          >
-            {c.form.successMessage}
-          </p>
         </form>
       </div>
     </div>
   </section>
 </BaseLayout>
-
-<script is:inline>
-  // Front-end-only demo handler. Replace with a real form service to
-  // actually receive submissions (see README).
-  (function () {
-    const form = document.getElementById('contact-form');
-    const success = document.getElementById('form-success');
-    if (!form || !success) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      form.reset();
-      success.classList.remove('hidden');
-      success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-  })();
-</script>

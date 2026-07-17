@@ -2,7 +2,7 @@
   "name": "zama-website",
   "type": "module",
   "version": "1.0.0",
-  "description": "ZAMA — boutique digital marketing agency. Marketing website built with Astro + Tailwind CSS.",
+  "description": "ZAMA - boutique digital marketing agency. Marketing website built with Astro + Tailwind CSS.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
