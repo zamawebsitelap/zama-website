@@ -37,8 +37,17 @@ const breadcrumbs = [
   title={`${d.title} | ZAMA`}
   description={d.description}
   image={d.image}
+  imageAlt={d.imageAlt}
   type="article"
   breadcrumbs={breadcrumbs}
+  article={{
+    title: d.title,
+    description: d.description,
+    pubDate: d.pubDate,
+    author: d.author,
+    image: d.image,
+    imageAlt: d.imageAlt,
+  }}
 >
   <article class="container py-16 md:py-24">
     <div class="mx-auto max-w-2xl">

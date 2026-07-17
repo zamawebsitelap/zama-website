@@ -31,24 +31,38 @@ import { site } from '../config/site';
 interface Crumb { name: string; path: string; }
 interface Faq { question: string; answer: string; }
 
+interface Article {
+  title: string;
+  description: string;
+  pubDate: Date;
+  author: string;
+  image?: string;
+  imageAlt?: string;
+}
+
 interface Props {
   title: string;
   description: string;
   image?: string;
+  imageAlt?: string;
   type?: 'website' | 'article';
   noindex?: boolean;
   breadcrumbs?: Crumb[];
   faqs?: Faq[];
+  /** Pass on blog posts: adds BlogPosting schema + article meta tags. */
+  article?: Article;
 }
 
 const {
   title,
   description,
   image,
+  imageAlt,
   type = 'website',
   noindex = false,
   breadcrumbs = [],
   faqs = [],
+  article,
 } = Astro.props;
 ---
 
@@ -62,11 +76,37 @@ const {
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#FBF8F3" />
 
-    {/* SEO meta + social cards */}
-    <SEO title={title} description={description} image={image} type={type} noindex={noindex} />
+    {/* RSS autodiscovery (browsers, readers & crawlers find the feed) */}
+    <link rel="alternate" type="application/rss+xml" title={`${site.name} — Insights`} href="/rss.xml" />
 
-    {/* Structured data (Organization, WebSite, ProfessionalService/LocalBusiness, + optional Breadcrumbs & FAQ) */}
-    <StructuredData breadcrumbs={breadcrumbs} faqs={faqs} />
+    {/* SEO meta + social cards */}
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      imageAlt={imageAlt}
+      type={type}
+      noindex={noindex}
+      publishedTime={article?.pubDate}
+    />
+
+    {/* Structured data (Organization, WebSite, ProfessionalService/LocalBusiness, + optional Breadcrumbs, FAQ & BlogPosting) */}
+    <StructuredData breadcrumbs={breadcrumbs} faqs={faqs} article={article} />
+
+    {/* Google Analytics (GA4) — only in production builds */}
+    {
+      import.meta.env.PROD && (
+        <>
+          <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-8L0SZWFS3J"></script>
+          <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8L0SZWFS3J');
+          </script>
+        </>
+      )
+    }
   </head>
 
   <body>

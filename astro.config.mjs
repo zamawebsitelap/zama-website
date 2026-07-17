@@ -14,6 +14,10 @@ export default defineConfig({
   integrations: [
     tailwind(),
     // auto-generates /sitemap-index.xml + /sitemap-0.xml at build time.
-    sitemap(),
+    // The placeholder legal pages are noindex, so keep them out of the
+    // sitemap too (listing noindexed URLs sends Google mixed signals).
+    sitemap({
+      filter: (page) => !page.includes('/privacy') && !page.includes('/terms'),
+    }),
   ],
 });
