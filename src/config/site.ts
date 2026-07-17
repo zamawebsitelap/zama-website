@@ -24,7 +24,17 @@ export const site = {
 
   // Short description used as a fallback for SEO / social sharing.
   description:
-    'ZAMA is a boutique digital marketing agency serving Washington, DC and South Florida, helping brands grow through strategy, creative, paid media, social, email, and SEO.',
+    'ZAMA is a boutique digital marketing agency helping Washington, DC and South Florida brands grow through strategy, creative, paid media, social, and SEO.',
+  defaultKeywords: [
+    'boutique digital marketing agency',
+    'digital marketing agency Washington DC',
+    'South Florida marketing agency',
+    'brand strategy',
+    'paid media',
+    'social media marketing',
+    'email marketing',
+    'SEO services',
+  ],
 
   // Business location - powers the LocalBusiness structured data (SEO).
   location: {
@@ -58,7 +68,10 @@ export const nav = [
 export const socials = [
   { label: 'Instagram', href: 'https://www.instagram.com/wearezama.co/' },
   { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61591643171758' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/company/wearezama' },
+  {
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/company/zama-digital-marketing/?viewAsMember=true',
+  },
 ];
 
 // -------------------------------------------------------------------

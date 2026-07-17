@@ -35,9 +35,17 @@ const breadcrumbs = [
 // SEO for the case study.
 const seoTitle = `${d.title} | ZAMA Work`;
 const seoDesc = d.summary;
+const seoKeywords = [d.industry, ...d.servicesUsed, d.client];
 ---
 
-<BaseLayout title={seoTitle} description={seoDesc} image={d.image} type="article" breadcrumbs={breadcrumbs}>
+<BaseLayout
+  title={seoTitle}
+  description={seoDesc}
+  keywords={seoKeywords}
+  image={d.image}
+  type="article"
+  breadcrumbs={breadcrumbs}
+>
   <article>
     {/* ---- Header ---- */}
     <section class="container pb-10 pt-16 md:pt-24">

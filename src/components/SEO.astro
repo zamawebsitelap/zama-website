@@ -11,6 +11,7 @@ import { site } from '../config/site';
 interface Props {
   title: string;
   description: string;
+  keywords?: string[];
   /** Optional social-share image (path under /public). */
   image?: string;
   /** 'website' for most pages, 'article' for blog posts. */
@@ -22,6 +23,7 @@ interface Props {
 const {
   title,
   description,
+  keywords = site.defaultKeywords,
   image = site.defaultOgImage,
   type = 'website',
   noindex = false,
@@ -30,18 +32,27 @@ const {
 // Canonical + absolute image URL, derived from the current page.
 const canonical = new URL(Astro.url.pathname, site.url).href;
 const imageUrl = new URL(image, site.url).href;
+const normalizedDescription =
+  description.length <= 155 ? description : `${description.slice(0, 152).trimEnd()}...`;
+const normalizedKeywords = keywords
+  .map((keyword) => keyword.trim())
+  .filter(Boolean)
+  .join(', ');
+const robots = noindex ? 'noindex, nofollow' : 'index, follow';
 ---
 
 <title>{title}</title>
-<meta name="description" content={description} />
+<meta name="description" content={normalizedDescription} />
+{normalizedKeywords && <meta name="keywords" content={normalizedKeywords} />}
 <link rel="canonical" href={canonical} />
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+<meta name="robots" content={robots} />
+<meta http-equiv="X-Robots-Tag" content={robots} />
 
 {/* Open Graph */}
 <meta property="og:type" content={type} />
 <meta property="og:site_name" content={site.name} />
 <meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
+<meta property="og:description" content={normalizedDescription} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={imageUrl} />
 <meta property="og:locale" content="en_US" />
@@ -49,5 +60,5 @@ const imageUrl = new URL(image, site.url).href;
 {/* Twitter Card */}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
+<meta name="twitter:description" content={normalizedDescription} />
 <meta name="twitter:image" content={imageUrl} />

@@ -3,8 +3,13 @@
 # =====================================================================
 
 seo:
-  title: "Contact ZAMA | Start a Project"
+  title: "Contact ZAMA | Boutique Digital Marketing Agency"
   description: "Ready to grow? Contact ZAMA to start a project or book a free consultation with our boutique digital marketing team in Washington, DC."
+  keywords:
+    - "contact ZAMA"
+    - "hire digital marketing agency"
+    - "marketing consultation Washington DC"
+    - "boutique agency contact"
 
 label: "GET IN TOUCH"
 h1: "Let's build something worth talking about."

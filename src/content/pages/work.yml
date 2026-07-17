@@ -5,8 +5,14 @@
 # =====================================================================
 
 seo:
-  title: "Our Work | ZAMA Digital Marketing Agency"
-  description: "See how ZAMA helps brands grow through strategy, creative, and performance marketing. Explore case studies and results from our boutique agency."
+  title: "Case Studies | ZAMA Digital Marketing Agency"
+  description: "See how ZAMA helps brands grow through strategy, creative, and performance marketing in case studies from our boutique digital marketing agency."
+  keywords:
+    - "digital marketing case studies"
+    - "agency portfolio"
+    - "brand growth results"
+    - "performance marketing examples"
+    - "ZAMA work"
 
 label: "SELECTED WORK"
 h1: "Work we are proud of."

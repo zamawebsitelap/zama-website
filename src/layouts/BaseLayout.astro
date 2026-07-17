@@ -18,6 +18,7 @@ interface Faq { question: string; answer: string; }
 interface Props {
   title: string;
   description: string;
+  keywords?: string[];
   image?: string;
   type?: 'website' | 'article';
   noindex?: boolean;
@@ -28,6 +29,7 @@ interface Props {
 const {
   title,
   description,
+  keywords,
   image,
   type = 'website',
   noindex = false,
@@ -61,7 +63,14 @@ const {
     />
 
     {/* SEO meta + social cards */}
-    <SEO title={title} description={description} image={image} type={type} noindex={noindex} />
+    <SEO
+      title={title}
+      description={description}
+      keywords={keywords}
+      image={image}
+      type={type}
+      noindex={noindex}
+    />
 
     {/* Structured data (Organization, WebSite, ProfessionalService/LocalBusiness, + optional Breadcrumbs & FAQ) */}
     <StructuredData breadcrumbs={breadcrumbs} faqs={faqs} />

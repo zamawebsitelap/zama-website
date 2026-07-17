@@ -3,8 +3,14 @@
 # =====================================================================
 
 seo:
-  title: "About ZAMA | Every brand deserves its dawn."
-  description: "A boutique digital marketing agency serving Washington, DC and South Florida, built to bring brands into their dawn, turning unseen ideas into unmistakable presence."
+  title: "About ZAMA | Boutique Digital Marketing Agency"
+  description: "Meet ZAMA, a boutique digital marketing agency in Washington, DC and South Florida helping brands move from unseen ideas to unmistakable presence."
+  keywords:
+    - "about ZAMA"
+    - "boutique marketing agency"
+    - "Washington DC agency"
+    - "South Florida marketing"
+    - "brand positioning"
 
 label: "ABOUT ZAMA"
 h1: "Every brand deserves its dawn, its sunrise, its light."

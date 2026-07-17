@@ -5,7 +5,16 @@
 # --- SEO: browser tab title + Google/social description ---
 seo:
   title: "ZAMA | Boutique Digital Marketing Agency in Washington, DC"
-  description: "ZAMA is a boutique digital marketing agency serving Washington, DC and South Florida, helping brands grow through strategy, creative, paid media, social, email, and SEO."
+  description: "ZAMA is a boutique digital marketing agency helping Washington, DC and South Florida brands grow through strategy, creative, paid media, social, and SEO."
+  keywords:
+    - "boutique digital marketing agency"
+    - "digital marketing Washington DC"
+    - "South Florida marketing agency"
+    - "brand strategy"
+    - "paid media"
+    - "social media marketing"
+    - "email marketing"
+    - "SEO services"
 
 # --- Hero (the opening screen) ---
 hero:
