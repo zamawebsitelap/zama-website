@@ -6,10 +6,13 @@
 
 seo:
   title: "Digital Marketing Services in Washington, DC | ZAMA"
-  description: "Explore ZAMA's digital marketing services: brand strategy, paid ads, social media, email, SEO, analytics, and growth marketing for brands ready to scale."
+  description: "Explore ZAMA's services: brand strategy, PR, event strategy, paid ads, social media, email, SEO, analytics, and growth marketing."
   keywords:
     - "digital marketing services"
     - "brand strategy services"
+    - "public relations agency"
+    - "event strategy"
+    - "sponsorship outreach"
     - "paid ads agency"
     - "social media services"
     - "SEO agency Washington DC"
@@ -17,7 +20,7 @@ seo:
 
 label: "WHAT WE DO"
 h1: "Digital marketing services that work as one."
-intro: "ZAMA is a full-service boutique agency. You can hire us for a single specialty or your entire marketing engine. Every service is led by senior talent and connected to a shared strategy, so nothing works in a silo."
+intro: "ZAMA is a full-service boutique agency. You can hire us for a single specialty or your entire marketing engine, from strategy and creative to PR, events, and performance. Every service is led by senior talent and connected to a shared strategy, so nothing works in a silo."
 
 # Closing call-to-action band
 cta:

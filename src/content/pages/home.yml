@@ -39,7 +39,7 @@ positioning: "A boutique agency that takes brands from unseen to unmistakable, f
 services:
   label: "WHAT WE DO"
   heading: "One team for your whole marketing engine."
-  intro: "From the first idea to the final report, ZAMA connects strategy, creative, and performance so your marketing works as one. Here is how we help brands grow."
+  intro: "From strategy and creative to PR, events, and performance, ZAMA connects every part of your marketing so it works as one. Here is how we help brands grow."
 
 # --- Selected work (case studies are pulled from src/content/work/) ---
 selectedWork:
