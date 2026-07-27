@@ -26,5 +26,5 @@ intro: "ZAMA is a full-service boutique agency. You can hire us for a single spe
 cta:
   text: "Not sure where to start?"
   button:
-    label: "Book a free consultation"
+    label: "Book an intro call"
     href: "/contact"

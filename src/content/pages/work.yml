@@ -25,5 +25,5 @@ cta:
     label: "Start a project"
     href: "/contact"
   secondaryButton:
-    label: "Book a free 30-min introductory call"
+    label: "Book an intro call"
     href: "https://calendly.com/christa-wearezama/30min?month=2026-07"

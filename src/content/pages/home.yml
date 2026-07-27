@@ -24,7 +24,7 @@ hero:
     label: "Start a project"
     href: "/contact"
   secondaryCta:
-    label: "Book a free 30-min introductory call"
+    label: "Book an intro call"
     href: "https://calendly.com/christa-wearezama/30min?month=2026-07"
   # Swap this image in /public/images/ to change the hero visual.
   # To use your own photo: add it to /public/images/ (e.g. hero-portrait.jpg)
@@ -101,7 +101,7 @@ faq:
 # --- Closing contact band ---
 contactBand:
   heading: "Let's map your next move."
-  line: "Book a free 30-minute introductory call and we'll talk through your goals, priorities, and quickest path to growth."
+  line: "Book an intro call and we'll talk through your goals, priorities, and quickest path to growth."
   button:
-    label: "Book a free 30-minute call"
+    label: "Book an intro call"
     href: "https://calendly.com/christa-wearezama/30min?month=2026-07"
