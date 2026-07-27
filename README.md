@@ -149,14 +149,16 @@ To also get each submission by email, open the Netlify site → Forms →
 
 ## Deploying your site
 
-The site is hosted on **Netlify**, which builds and deploys automatically on
-every push to `main` (settings pinned in `netlify.toml`: build `npm run build`,
-publish `dist`).
+The site is configured for free, automatic deployment to **GitHub Pages**.
+Every push to `main` triggers a GitHub Action that builds the Astro site and
+publishes the static output from `dist/`.
 
-**If your domain ever changes:** update it in two places —
-`site` in `astro.config.mjs` and `url` in `src/config/site.ts` — and add the
-new domain in the Netlify dashboard (Domain management → add domain → provision
-the free HTTPS certificate).
+The deployment URL will be:
+`https://<your-github-username>.github.io/zama-website/`
+
+**If your domain ever changes:** update the `PUBLIC_SITE_URL` value in the GitHub
+workflow (or set a custom domain in GitHub Pages settings) and keep the site URL
+in sync with `astro.config.mjs` + `src/config/site.ts`.
 
 ---
 

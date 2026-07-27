@@ -9,8 +9,12 @@ import sitemap from '@astrojs/sitemap';
 //  the sitemap, and structured data. If you launch on a different
 //  domain, change it here (and in src/config/site.ts).
 // -------------------------------------------------------------------
+const siteUrl = process.env.PUBLIC_SITE_URL || 'https://wearezama.com';
+const basePath = process.env.SITE_BASE_PATH || '/';
+
 export default defineConfig({
-  site: 'https://wearezama.com',
+  site: siteUrl,
+  base: basePath,
   integrations: [
     tailwind(),
     // auto-generates /sitemap-index.xml + /sitemap-0.xml at build time.

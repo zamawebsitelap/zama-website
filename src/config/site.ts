@@ -7,20 +7,24 @@
 //  in src/content/pages/*.yml - see the README.
 // ===================================================================
 
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://wearezama.com';
+const siteDomain = new URL(siteUrl).hostname;
+
 export const site = {
   name: 'ZAMA',
   tagline: 'We Are ZAMA.',
 
   // Your live domain. Used for canonical URLs, sitemap & SEO.
   // Keep this in sync with `site` in astro.config.mjs.
-  url: 'https://wearezama.com',
-  domain: 'wearezama.com',
+  url: siteUrl,
+  domain: siteDomain,
 
   // The contact email shown in the footer, on the Contact page,
   // and inside structured data.
   email: 'christa@wearezama.com',
   // Optional contact phone number, used in the footer and structured data.
   phone: '',
+  introCallUrl: 'https://calendly.com/christa-wearezama/30min?month=2026-07',
 
   // Short description used as a fallback for SEO / social sharing.
   description:
