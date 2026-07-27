@@ -22,11 +22,6 @@ const c = page.data as any; // page copy from src/content/pages/home.yml
 const faqEntry = await getEntry('pages', 'faq');
 const faqs = (faqEntry.data as any).items as { question: string; answer: string }[];
 
-// Services, ordered by their `order` field.
-const services = (await getCollection('services')).sort(
-  (a, b) => a.data.order - b.data.order
-);
-
 // Featured case studies for "Selected work".
 const featuredWork = (await getCollection('work', ({ data }) => data.featured && !data.draft))
   .sort((a, b) => a.data.order - b.data.order)
@@ -60,6 +55,7 @@ const testimonials = (await getCollection('testimonials', ({ data }) => data.fea
       {/* Hero image is above the fold -> load eagerly to avoid a flash */}
       <div class="reveal is-visible">
         <Figure src={c.hero.image} alt={c.hero.imageAlt} ratio="4/5" loading="eager" fetchpriority="high" />
+        <p class="mt-4 text-sm font-medium text-charcoal/70">{c.hero.imageCaption}</p>
       </div>
     </div>
     <hr class="rule-gold container" />
@@ -82,8 +78,8 @@ const testimonials = (await getCollection('testimonials', ({ data }) => data.fea
       />
       <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {
-          services.map((s, i) => (
-            <ServiceCard index={i + 1} title={s.data.title} description={s.data.short} />
+          c.services.offerings.map((offering: any, i: number) => (
+            <ServiceCard index={i + 1} title={offering.title} description={offering.outcome} />
           ))
         }
       </div>

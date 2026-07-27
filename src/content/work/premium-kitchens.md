@@ -1,10 +1,10 @@
 ---
-title: "Premium Kitchens"
+title: "Better leads, less noise."
 client: "Premium Kitchens"
 industry: "Luxury Kitchen Design"
 seoTitle: "Premium Kitchens | ZAMA Work"
 seoDescription: "How Christa and her team repositioned Premium Kitchens as a luxury design partner, cutting wasted traffic while lifting engagement, direct visits, and lead quality."
-summary: "We cut their website traffic by 15 percent and made the business better. That's why it worked."
+summary: "We made the business more profitable by cutting traffic that wasn't converting. Here's how."
 challenge: "A referral business was not enough anymore. The website and marketing looked outdated, and the leads coming in were often low-budget or the wrong remodel type."
 whatWeDid: "Christa and her team repositioned Premium Kitchens as a luxury design partner rather than a price-competing remodeler, refreshed brand expression, rebuilt campaigns around intent, and added reporting focused on lead quality instead of lead volume."
 results:

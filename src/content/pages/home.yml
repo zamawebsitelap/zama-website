@@ -18,28 +18,38 @@ seo:
 
 # --- Hero (the opening screen) ---
 hero:
-  h1: "Every brand deserves its dawn, its sunrise, its light."
-  subhead: "Every brand has a moment before the world sees it. A quiet, still dark, full of everything it could become. ZAMA exists for that moment - from first light to full warmth, we help brands rise."
+  h1: "Strategy, creative, and growth marketing for brands that are ready to be known."
+  subhead: "Every brand deserves its dawn, its sunrise, its light. ZAMA exists for that moment - from first light to full warmth, we help brands rise."
   primaryCta:
     label: "Start a project"
     href: "/contact"
   secondaryCta:
-    label: "See our work"
-    href: "/work"
+    label: "Book a free 30-min introductory call"
+    href: "https://calendly.com/christa-wearezama/30min?month=2026-07"
   # Swap this image in /public/images/ to change the hero visual.
   # To use your own photo: add it to /public/images/ (e.g. hero-portrait.jpg)
   # and point this line at it. Always update the alt text below too.
   image: "/images/savoir00001.jpg"
   imageAlt: "A real hero photo for ZAMA, a boutique digital marketing agency in Washington, DC."
+  imageCaption: "Christa Machado, Founder of ZAMA"
 
 # --- Positioning statement ---
 positioning: "A boutique agency that takes brands from unseen to unmistakable, from the first light of an idea to the full warmth of being known. We bring strategy, creative, and growth together with senior attention and care."
 
-# --- Services overview (cards are pulled from src/content/services/) ---
+# --- Services overview (core offerings for the homepage cards) ---
 services:
   label: "WHAT WE DO"
-  heading: "One team for your whole marketing engine."
-  intro: "From strategy and creative to PR, events, and performance, ZAMA connects every part of your marketing so it works as one. Here is how we help brands grow."
+  heading: "Four core offerings that move your brand forward."
+  intro: "We keep your marketing focused and outcome-driven. No wall of disconnected services, just the work that grows your brand."
+  offerings:
+    - title: "Brand & Creative"
+      outcome: "Clarify your position and turn it into creative that people remember."
+    - title: "Growth Marketing"
+      outcome: "Paid ads, SEO, email, and analytics that make your budget go further."
+    - title: "Social & Community"
+      outcome: "Build attention and loyalty with content and community people actually care about."
+    - title: "PR & Events"
+      outcome: "Earn meaningful visibility through media outreach, sponsorship outreach, and unforgettable event experiences."
 
 # --- Selected work (case studies are pulled from src/content/work/) ---
 selectedWork:
@@ -90,8 +100,8 @@ faq:
 
 # --- Closing contact band ---
 contactBand:
-  heading: "Let's build something worth talking about."
-  line: "Tell us about your brand and where you want to go. We will show you how to get there."
+  heading: "Let's map your next move."
+  line: "Book a free 30-minute introductory call and we'll talk through your goals, priorities, and quickest path to growth."
   button:
-    label: "Start a project"
-    href: "/contact"
+    label: "Book a free 30-minute call"
+    href: "https://calendly.com/christa-wearezama/30min?month=2026-07"

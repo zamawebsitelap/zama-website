@@ -57,9 +57,18 @@ const breadcrumbs = [
   <section class="bg-terracotta">
     <div class="container flex flex-col items-center gap-6 py-section text-center md:flex-row md:justify-between md:text-left">
       <p class="text-h2 font-serif font-medium text-cream reveal">{c.cta.text}</p>
-      <a href={c.cta.button.href} class="btn bg-cream text-terracotta-deep hover:bg-white reveal">
-        {c.cta.button.label}
-      </a>
+      <div class="flex flex-wrap items-center justify-center gap-3 reveal md:justify-end">
+        <a href={c.cta.button.href} class="btn bg-cream text-terracotta-deep hover:bg-white">
+          {c.cta.button.label}
+        </a>
+        {
+          c.cta.secondaryButton && (
+            <a href={c.cta.secondaryButton.href} class="btn-secondary border-cream text-cream hover:bg-cream/10">
+              {c.cta.secondaryButton.label}
+            </a>
+          )
+        }
+      </div>
     </div>
   </section>
 </BaseLayout>
