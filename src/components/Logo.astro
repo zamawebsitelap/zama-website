@@ -1,5 +1,5 @@
 ---
-// The ZAMA wordmark. Uses the provided logo assets for a more distinctive brand mark.
+// The ZAMA wordmark. Uses transparent logo assets for a cleaner header/footer lockup.
 import { site } from '../config/site';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
   class?: string;
 }
 const { tone = 'dark', class: className = '' } = Astro.props;
-const logoSrc = tone === 'light' ? '/images/zama-wordmark-tagline.png' : '/images/zama-logo-black.png';
+const logoSrc = tone === 'light' ? '/images/zama-footer-logo.png' : '/images/zama-header-logo.png';
 ---
 
 <img
