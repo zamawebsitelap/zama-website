@@ -5,6 +5,7 @@
 //  src/config/site.ts. Edit that file to change them.
 // ===================================================================
 import { site, nav, socials } from '../config/site';
+import Logo from './Logo.astro';
 
 const year = new Date().getFullYear();
 const emailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}`;
@@ -15,7 +16,7 @@ const emailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComp
     <div class="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr] md:gap-8">
       {/* Brand + tagline */}
       <div>
-        <p class="font-serif text-3xl font-semibold text-cream">{site.name}</p>
+        <Logo tone="light" class="h-10 w-auto" />
         <p class="mt-3 max-w-xs text-sm leading-relaxed text-cream/70">
           {site.tagline} A boutique digital marketing agency in {site.location.city}, {site.location.region}.
         </p>
