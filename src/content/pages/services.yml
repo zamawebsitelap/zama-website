@@ -5,22 +5,23 @@
 # =====================================================================
 
 seo:
-  title: "Digital Marketing Services in Washington, DC | ZAMA"
-  description: "Explore ZAMA's services: brand strategy, PR, event strategy, paid ads, social media, email, SEO, analytics, and growth marketing."
+  title: "SEO, Google Ads & Meta Ads Agency in Washington, DC | ZAMA"
+  description: "ZAMA is a boutique agency for SEO, Google Ads, and Meta advertising in Washington, DC and South Florida, built on brand strategy and honest reporting."
   keywords:
     - "digital marketing services"
     - "brand strategy services"
     - "public relations agency"
     - "event strategy"
     - "sponsorship outreach"
-    - "paid ads agency"
+    - "Google Ads agency"
+    - "Meta advertising agency"
     - "social media services"
     - "SEO agency Washington DC"
     - "email marketing services"
 
 label: "WHAT WE DO"
 h1: "Digital marketing services that work as one."
-intro: "ZAMA is a full-service boutique agency. You can hire us for a single specialty or your entire marketing engine, from strategy and creative to PR, events, and performance. Every service is led by senior talent and connected to a shared strategy, so nothing works in a silo."
+intro: "ZAMA is a full-service boutique agency. You can hire us for a single specialty or your entire marketing engine, from SEO and Google and Meta advertising to strategy, creative, PR, and events. Every service is led by senior talent and connected to a shared strategy, so nothing works in a silo."
 
 # Closing call-to-action band
 cta:
