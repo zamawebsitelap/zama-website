@@ -8,6 +8,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import TestimonialCard from '../../components/TestimonialCard.astro';
+import FaqList from '../../components/FaqList.astro';
 
 // Generate a page for every (non-draft) case study.
 export async function getStaticPaths() {
@@ -116,6 +117,18 @@ const seoKeywords = [d.industry, ...d.servicesUsed, d.client];
           <div class="prose-zama reveal max-w-prose border-t border-gold/25 pt-10 text-[1.02rem] leading-relaxed text-charcoal/80 [&_h2]:mt-8 [&_h2]:font-serif [&_h2]:text-h3 [&_h2]:font-semibold [&_p]:mt-4">
             <Content />
           </div>
+
+          {/* Visible FAQs; the same data is also included in structured SEO data. */}
+          {
+            d.faqs && d.faqs.length > 0 && (
+              <section class="reveal border-t border-gold/25 pt-10">
+                <h2 class="label !text-charcoal/45">Frequently Asked Questions</h2>
+                <div class="mt-6">
+                  <FaqList items={d.faqs} />
+                </div>
+              </section>
+            )
+          }
 
           {/* Testimonials section */}
           {
