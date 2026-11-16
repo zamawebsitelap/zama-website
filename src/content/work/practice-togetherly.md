@@ -2,6 +2,7 @@
 title: "Practice Togetherly"
 client: "Practice Togetherly"
 industry: "Wellness Marketplace"
+website: "https://www.practice-togetherly.com/"
 seoTitle: "Practice Togetherly | ZAMA Work"
 seoDescription: "How ZAMA ran a six-week growth sprint for Practice Togetherly, a Northern Virginia marketplace that brings vetted wellness instructors to homes, buildings, and communities."
 summary: "We ran a six-week growth sprint for Practice Togetherly, a Northern Virginia wellness marketplace, building the positioning, referral program, provider network, and community partnerships that bring new clients to the platform."
